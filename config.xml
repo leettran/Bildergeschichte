@@ -11,12 +11,12 @@ and open the template in the editor.
         id        = "com.phonegap.worteliste"
         versionCode="10" 
         version   = "1.0.0">
-    <name>Bildergeschichte</name>    
+    <name>Worteliste</name>    
     <preference name="orientation" value="landscape" /> 
     <preference name="fullscreen" value="true" />
     <preference name="loglevel" value="DEBUG" />     
     <description>
-       This is the Bildergeschichte task of the NeuroCare Testbatterie. 
+       This is the Worteliste task of the NeuroCare Testbatterie. 
     </description>
     
     <author href="http://www.ascora.de" email="aem@ascora.de">

@@ -91,7 +91,7 @@
         text-align: justify;
         font-weight: bold;  
         position: absolute;
-        top: 25%;
+        top: 22%;
         left: 5%;
         right: 5%;
     }
@@ -109,7 +109,7 @@
     }
 
     .defaultButton{
-       /*background-image:url('images/btns-bg/bt-weiter.png');*/
+        /*background-image:url('images/btns-bg/bt-weiter.png');*/
         background-size: 100%;
         background-repeat:no-repeat;       
         height: 88px;
@@ -122,29 +122,29 @@
     }
 
 
- /*to use with the default phonegap button element*/
-/* .defaultButton{
-    
-        background-size: cover;      
-        background-color: #64C463;      
-        height: 80px;
-        width: 237px;
-        position: absolute;
-        bottom: 1%;
-        right: 5%;
-        font-size: x-large;
-        text-shadow: none;
-        border-top-left-radius: 50px;
-        border-bottom-left-radius: 50px;
-        border-top-right-radius: 25px;
-        border-bottom-right-radius: 25px;
-    }*/
-    
-/*    .buttonImage{
-        position: relative;
-        top: -15px;
-        left: -25px;
-    }*/
+    /*to use with the default phonegap button element*/
+    /* .defaultButton{
+        
+            background-size: cover;      
+            background-color: #64C463;      
+            height: 80px;
+            width: 237px;
+            position: absolute;
+            bottom: 1%;
+            right: 5%;
+            font-size: x-large;
+            text-shadow: none;
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+            border-top-right-radius: 25px;
+            border-bottom-right-radius: 25px;
+        }*/
+
+    /*    .buttonImage{
+            position: relative;
+            top: -15px;
+            left: -25px;
+        }*/
 
 
     .defaultButton:active, .defaultButton:focus, .defaultButton.active{
@@ -169,7 +169,7 @@
 
     }
 
-  
+
 
     .genusButton{
         height: 60px;
@@ -214,7 +214,7 @@
         text-shadow: none;
     }
 
-   
+
 
     .yesButton:active, .yesButton:focus, .yesButton.active{
         background-image:url('images/btns-bg/bt-ja-hover.png');
@@ -240,7 +240,7 @@
         text-shadow: none;
     }
 
-   
+
 
     .noButton:active, .noButton:focus, .noButton.active{
         background-image:url('images/btns-bg/bt-nein-hover.png');
@@ -286,15 +286,15 @@
 
     .centredDiv
     {
-        width: 1000px;
+        width: 1024px;
         display: block;
         margin-left: auto;
         margin-right: auto;
         overflow: hidden;
         text-align: center;
-/*        z-index: 100;*/
+
     }
-    
+
     .hintText{
         position: absolute;
         bottom: 2%;
@@ -302,87 +302,151 @@
         right: 2%;
         text-align: center;
     }
-    
-    .borderedImage{
-       
-        border:5px solid orange;
-        position: relative;
-        width: 333px;
-        height: 333px;
-        z-index: 800;
+
+    .selectedImage{
+        opacity: 0.7;
+        box-shadow: 5px 5px 5px #64C463;
+        border:2px solid #64C463;
+        /*        position: relative;
+                width: auto;
+                height: auto;*/
+
     }
-    
+
     .borderedTd{
-       
+
         border:5px solid orange;
         position: relative;
         width: 333px;
         height: 333px;
-       
+
+    }
+
+
+    .targetFieldDemo{
+        border:1px solid black; 
+        min-width: 195px;
+        min-height: 200px;
+        width: 195px;
+        height: 200px;
+
     }
     
     
-    .targetField{
-       
-        border:1px solid black;
+     .targetField{
+        border:1px solid black; 
+        min-width: 195px;
+        min-height: 200px;
+        width: 195px;
+        height: 200px;
+
+    }
+
+    .origFieldDemo{
+        border:1px solid white;
+        min-width: 195px;
+        min-height: 200px;
+        width: 195px;
+        height: 200px;
+    }
+    
+    
+    .origField{
+        border:1px solid white;
+        min-width: 195px;
+        min-height: 200px;
+        width: 195px;
+        height: 200px;
+    }
+
+    .emptyImage{
+        border:1px solid white;
         position: relative;
-        width: 333px;
-        height: 333px;
-        /*z-index: 500;*/
+        width: 195px;
+        height: 200px; 
     }
-    
+
+    .gapField{
+        border:0px solid white;
+        position: relative;
+        width: 1008px;
+        height: 120px; 
+    }
+
+    .contentRow{
+        position: relative;
+        width: auto;
+        height: auto;
+    }
+
+    .gapRow{
+        position: relative;
+        width: 1008;
+        height: 120;
+    }
+
     .unborderedImage{
-       
+
         border:0px solid black;
         position: relative;
         width: 333px;
         height: 333px;
         z-index: 800;
     }
-    
+
     .unborderedTd{
-       
+
         border:1px solid black;
         position: relative;
         width: 333px;
         height: 333px;
-       
+
     }
-    
-    
+
+
     .imageTile{
         position: relative;
         z-index: 500;
     }
-    
-    
-    
+
+
+
     .borderedDiv{
-       
+
         width: 333px;
         height: 333px;
         border:5px solid orange;
-        
+
         /*z-index: 20;*/
     }
-    
-    
-    
-    .tableWithImages{
-        position:absolute;
-        top: 5px;
-        /*left: 30%;*/
+
+
+
+    .tableWithImagesDemo{
+
+        border-collapse:separate; 
+        border-spacing: 1em;
+        margin: 0 auto;
+        width: 398px;
     }
     
+    
+    .tableWithImagesTask1{
+       border-collapse:separate; 
+        border-spacing: 1em;
+        margin: 0 auto;
+        width: 601px; 
+    }
+
     .borderedTargetField{
-       
+
         border:5px solid orange;
         position: relative;
         z-index: 50;
     }
-    
+
     .borderedTargetField_Correct{
-       
+
         border:5px solid orange;
         position: relative;
         z-index: 700;

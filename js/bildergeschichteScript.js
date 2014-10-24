@@ -9,7 +9,7 @@
 var selectedTd_Id;
 var selectedImg_Id;
 var selectedImg_src;
-var noSelecting = false;
+var imageSelected = false;
 
 
 // to switch to the demo page
@@ -71,30 +71,32 @@ function selectImage(origTd, mainTable) {
             selectedImg_Id = img.first().attr("id");
         }
         // only if selected image isn't already selected or slided
-        if (currentClass !== "borderedTd" && $("#" + clickedTdId).data("status") === "full") {
+        if (currentClass !== "selectedImage" && $("#" + clickedTdId).data("status") === "full") {
 
             // show border on selected image
-            $("#" + clickedTdId).attr('class', 'borderedTd');
+            $("#" + clickedTdId).attr('class', 'selectedImage');
             // set id
             selectedTd_Id = clickedTdId;
-
+            // set selection bool
+            imageSelected = true;
             // remove border if other image was selected
             var allTds = mainTable.getElementsByTagName('td');
             for (var i = 0; i < allTds.length; i++) {
                 var id = allTds[i].id;
                 var tdClass = $("#" + id).attr('class');
-                if (id !== clickedTdId && tdClass !== "unborderedTd") {
+                // toggle only image fields
+                if (id !== clickedTdId && tdClass !== "origField" && $("#" + id).data("status") === "full") {
 
-                    $('#' + id).attr('class', 'unborderedTd');
+                    $('#' + id).attr('class', 'origField');
                 }
 
             }
         }
-        
+
         // if image will be slided back
-        else if (currentClass !== "borderedTd" && $("#" + clickedTdId).data("status") === "empty"){
+        else if (currentClass !== "selectedImage" && $("#" + clickedTdId).data("status") === "empty") {
             // slide image back
-            slideImageToTargetField(origTd,mainTable);
+            slideImageToTargetField(origTd, mainTable);
         }
 
 
@@ -118,14 +120,14 @@ function slideImageToTargetField(targetTd, mainTable) {
         var currentClass = $("#" + clickedTargetId).attr('class');
 
         // slide selected image only if target field is empty and not highlighted
-        if (currentClass !== "borderedTd" && $('#' + clickedTargetId).data("status") === "empty") {
+        if (currentClass !== "selectedImage" && $('#' + clickedTargetId).data("status") === "empty" && imageSelected) {
 
             // show border on selected field
-            $("#" + clickedTargetId).attr('class', 'borderedTd');
+            $("#" + clickedTargetId).attr('class', 'selectedImage');
 
             setTimeout(function() {
-               
-                
+
+
                 // move image to target field
                 $("#" + selectedTd_Id).children('img').clone().appendTo("#" + clickedTargetId);
                 $("#" + selectedTd_Id).find('img').remove();
@@ -134,12 +136,15 @@ function slideImageToTargetField(targetTd, mainTable) {
                 $('#' + selectedTd_Id).data("status", "empty");
                 $('#' + clickedTargetId).data("status", "full");
                 // remove highlighting
-                $('#' + selectedTd_Id).attr('class', 'unborderedTd');
-                $('#' + clickedTargetId).attr('class', 'unborderedTd');
+                $('#' + selectedTd_Id).attr('class', 'targetField');
+                $('#' + clickedTargetId).attr('class', 'origField');
 
             }, 100);
             
-           
+            // reset selection bool
+            imageSelected = false;
+
+
 
 //            // get coordinates to slide to
 //            var targetX = $("#" + clickedTargetId).offset().left;
@@ -175,15 +180,15 @@ function slideImageToTargetField(targetTd, mainTable) {
 //            }, 1000);
 
         }
-        
+
         // if image will be slided back
-        else if (currentClass !== "borderedTd" && $('#' + clickedTargetId).data("status") === "full"){
+        else if (currentClass !== "selectedImage" && $('#' + clickedTargetId).data("status") === "full") {
             // select image
-            selectImage(targetTd,mainTable);
+            selectImage(targetTd, mainTable);
         }
 
 
-       
+
     }
 
     catch (error) {

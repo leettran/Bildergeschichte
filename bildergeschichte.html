@@ -65,7 +65,7 @@ This html page should contain the whole process of this task as a collection of 
         <div data-role="page" id="picturesStoryIntro" data-dom-cache=true class="introPage" >
 
             <div data-role="content">
-                
+
                 <image src="css\images\icons\info.png" class="infoIcon"/>
 
                 <center>
@@ -92,7 +92,7 @@ This html page should contain the whole process of this task as a collection of 
         <div data-role="page" id="slideToPicturesStoryDemo" data-dom-cache=true class="introPage" >
 
             <div data-role="content">
-                
+
                 <image src="css\images\icons\info.png" class="infoIcon"/>
 
                 <center>
@@ -119,20 +119,25 @@ This html page should contain the whole process of this task as a collection of 
 
 
                 <div class="centredDiv">
-                    <table class="tableWithImages">
-                        <tr> 
+                    <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
 
-                            <td class="targetField"><image  src="css\images\story-pics\bg_demo1.jpg"/>   </td>
-                            <td class="targetField"><image src="css\images\story-pics\bg_demo2.jpg"/>   </td> 
+                            <td class="origFieldDemo"> <image  src="css\images\story-pics\bg_demo1.png"/>   </td>
+                            <td class="origFieldDemo"> <image  src="css\images\story-pics\bg_demo2.png"/>   </td> 
 
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
                         </tr>
 
 
 
-                        <tr> 
+                        <tr class="contentRow"> 
 
-                            <td class="targetField"><image  />   </td>
-                            <td class="targetField"><image />   </td> 
+                            <td class="targetFieldDemo">  </td>
+                            <td class="targetFieldDemo"> </td> 
 
                         </tr>
 
@@ -151,7 +156,7 @@ This html page should contain the whole process of this task as a collection of 
 
                     function showJustForWhile() {
                         setTimeout(function() {
-                            $.mobile.changePage('#picturesStoryDemo2', {transition: "flip"});
+                            $.mobile.changePage('#picturesStoryDemo2', {transition: "slide"});
                         }, 3000);
 
                     }
@@ -171,20 +176,23 @@ This html page should contain the whole process of this task as a collection of 
 
 
                 <div class="centredDiv">
-                    <table class="tableWithImages">
+                    <table class="tableWithImagesDemo">
                         <tr> 
 
-                            <td class="targetField"><image  src="css\images\story-pics\bg_demo1.jpg"/>   </td>
-                            <td class="borderedImage"><image src="css\images\story-pics\bg_demo2.jpg" />   </td> 
+                            <td class="origFieldDemo"><image  src="css\images\story-pics\bg_demo1.png"/>   </td>
+                            <td class="selectedImage"><image src="css\images\story-pics\bg_demo2.png" />   </td> 
 
                         </tr>
 
-
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
 
                         <tr> 
 
-                            <td class="targetField"><image  />   </td>
-                            <td class="targetField"><image />   </td> 
+                            <td class="targetFieldDemo"> </td>
+                            <td class="targetFieldDemo"> </td> 
 
                         </tr>
 
@@ -203,7 +211,7 @@ This html page should contain the whole process of this task as a collection of 
 
                     function showJustForWhile() {
                         setTimeout(function() {
-                            $.mobile.changePage('#picturesStoryDemo3', {transition: "flip"});
+                            $.mobile.changePage('#picturesStoryDemo3', {transition: "slide"});
                         }, 3000);
 
                     }
@@ -223,20 +231,23 @@ This html page should contain the whole process of this task as a collection of 
             <div data-role="content">
 
                 <div class="centredDiv">
-                    <table class="tableWithImages">
+                    <table class="tableWithImagesDemo">
                         <tr> 
 
-                            <td class="targetField"><image  src="css\images\story-pics\bg_demo1.jpg"/>   </td>
-                            <td class="borderedImage" id="bg_demo2_tomove_ImageDiv1"><image id="bg_demo2_tomove" class="imageTile" src="css\images\story-pics\bg_demo2.jpg"/>   </td> 
+                            <td class="origFieldDemo"><image  src="css\images\story-pics\bg_demo1.png"/>   </td>
+                            <td class="selectedImage" id="bg_demo2_tomove_ImageDiv1"><image id="bg_demo2_tomove" class="imageTile" src="css\images\story-pics\bg_demo2.png"/>   </td> 
 
                         </tr>
 
-
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
 
                         <tr> 
 
-                            <td class="borderedImage" id="bg_demo2_tomove_TargetDiv1"><image  />   </td>
-                            <td class="targetField"><image />   </td> 
+                            <td class="selectedImage" id="bg_demo2_tomove_TargetDiv1"> </td>
+                            <td class="targetFieldDemo"> </td> 
 
                         </tr>
 
@@ -257,18 +268,16 @@ This html page should contain the whole process of this task as a collection of 
                         // slide image to target field
                         setTimeout(function() {
                             $("#bg_demo2_tomove").animate({
-                                left: '-' + '337' + 'px',
-                                top: '+' + '340' + 'px'
+                                left: '-' + '215' + 'px',
+                                top: '+' + '363' + 'px'
                             }, 5000, function() {
                                 // Animation completed
 
-                                $("#bg_demo2_tomove_ImageDiv1").css("border", "1px solid black");
-                                $("#bg_demo2_tomove_TargetDiv1").css("border", "1px solid black");
+                                $("#bg_demo2_tomove_ImageDiv1").attr('class', 'targetFieldDemo');
+                                $("#bg_demo2_tomove_TargetDiv1").attr('class', 'origFieldDemo');
 
                                 setTimeout(function() {
-
-
-                                    $.mobile.changePage('#picturesStoryDemo4', {transition: "flip"});
+                                    $.mobile.changePage('#picturesStoryDemo4', {transition: "slide"});
                                 }, 2000);
                             });
                         }, 3000);
@@ -289,21 +298,24 @@ This html page should contain the whole process of this task as a collection of 
             <div data-role="content">
 
                 <div class="centredDiv">
-                    <table class="tableWithImages">
+                    <table class="tableWithImagesDemo">
                         <tr> 
 
-                            <td class="targetField"><image  src="css\images\story-pics\bg_demo1.jpg"/>   </td>
-                            <td class="targetField" ><image />   </td> 
+                            <td class="origFieldDemo"><image  src="css\images\story-pics\bg_demo1.png"/>   </td>
+                            <td class="targetFieldDemo" > </td> 
 
                         </tr>
 
-
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
 
 
                         <tr> 
 
-                            <td class="borderedImage"><image  src="css\images\story-pics\bg_demo2.jpg" />   </td>
-                            <td class="targetField"><image />   </td> 
+                            <td class="selectedImage"><image  src="css\images\story-pics\bg_demo2.png" />   </td>
+                            <td class="targetFieldDemo"> </td> 
 
                         </tr>
 
@@ -322,7 +334,7 @@ This html page should contain the whole process of this task as a collection of 
 
                     function showJustForWhile() {
                         setTimeout(function() {
-                            $.mobile.changePage('#picturesStoryDemo5', {transition: "flip"});
+                            $.mobile.changePage('#picturesStoryDemo5', {transition: "slide"});
                         }, 3000);
 
                     }
@@ -344,20 +356,23 @@ This html page should contain the whole process of this task as a collection of 
             <div data-role="content">
 
                 <div class="centredDiv">
-                    <table class="tableWithImages">
+                    <table class="tableWithImagesDemo">
                         <tr> 
 
-                            <td class="targetField"><image  src="css\images\story-pics\bg_demo1.jpg"/>   </td>
-                            <td class="borderedImage" id="bg_demo2_tomove_ImageDiv2"><image id="bg_demo2_correct"/>   </td> 
+                            <td class="origFieldDemo"><image  src="css\images\story-pics\bg_demo1.png"/>   </td>
+                            <td class="selectedImage" id="bg_demo2_tomove_ImageDiv2"><image id="bg_demo2_correct"/>   </td> 
 
                         </tr>
 
-
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
 
                         <tr> 
 
-                            <td class="borderedImage" id="bg_demo2_tomove_TargetDiv2"><image class="imageTile" id="bg_demo_tf1_correct" src="css\images\story-pics\bg_demo2.jpg"/>   </td>
-                            <td class="targetField"><image />   </td> 
+                            <td class="selectedImage" id="bg_demo2_tomove_TargetDiv2"><image class="imageTile" id="bg_demo_tf1_correct" src="css\images\story-pics\bg_demo2.png"/>   </td>
+                            <td class="targetFieldDemo">   </td> 
 
                         </tr>
 
@@ -378,20 +393,18 @@ This html page should contain the whole process of this task as a collection of 
                         // slide image to target field
                         setTimeout(function() {
                             $("#bg_demo_tf1_correct").animate({
-                                left: '+' + '337' + 'px',
-                                top: '-' + '340' + 'px'
+                                left: '+' + '215' + 'px',
+                                top: '-' + '365' + 'px'
 //                                height: "toggle"
                             }, 5000, function() {
                                 // Animation completed
 
 
-                                $("#bg_demo2_tomove_ImageDiv2").css("border", "1px solid black");
-                                $("#bg_demo2_tomove_TargetDiv2").css("border", "1px solid black");
+                                $("#bg_demo2_tomove_ImageDiv2").attr('class', 'origFieldDemo');
+                                $("#bg_demo2_tomove_TargetDiv2").attr('class', 'targetFieldDemo');
 
                                 setTimeout(function() {
-
-
-                                    $.mobile.changePage('#picturesStoryDemo6', {transition: "flip"});
+                                    $.mobile.changePage('#picturesStoryDemo6', {transition: "slide"});
                                 }, 2000);
                             });
                         }, 3000);
@@ -410,20 +423,23 @@ This html page should contain the whole process of this task as a collection of 
             <div data-role="content">
 
                 <div class="centredDiv">
-                    <table class="tableWithImages">
+                    <table class="tableWithImagesDemo">
                         <tr> 
 
-                            <td class="targetField"><image  src="css\images\story-pics\bg_demo1.jpg"/>   </td>
-                            <td class="borderedImage" id="bg_demo2_tomove_ImageDiv3"><image id="bg_demo2_tomove2" class="imageTile" src="css\images\story-pics\bg_demo2.jpg"/>   </td> 
+                            <td class="origFieldDemo"><image  src="css\images\story-pics\bg_demo1.png"/>   </td>
+                            <td class="selectedImage" id="bg_demo2_tomove_ImageDiv3"><image id="bg_demo2_tomove2" class="imageTile" src="css\images\story-pics\bg_demo2.png"/>   </td> 
 
                         </tr>
 
-
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
 
                         <tr> 
 
-                            <td class="borderedImage" id="bg_demo2_tomove_TargetDiv3"><image  />   </td>
-                            <td class="targetField"><image />   </td> 
+                            <td class="selectedImage" id="bg_demo2_tomove_TargetDiv3"> </td>
+                            <td class="targetFieldDemo"> </td> 
 
                         </tr>
 
@@ -431,7 +447,7 @@ This html page should contain the whole process of this task as a collection of 
                     </table>
                 </div>
 
-                <h1 class="hintText"> Fahren Sie jetzt fort bitte. </h1>
+                <h1 class="hintText"> Jetzt können Sie fortfahren. </h1>
 
             </div>
 
@@ -444,18 +460,18 @@ This html page should contain the whole process of this task as a collection of 
                         // slide image to target field
                         setTimeout(function() {
                             $("#bg_demo2_tomove2").animate({
-                                left: '-' + '337' + 'px',
-                                top: '+' + '340' + 'px'
+                                left: '-' + '215' + 'px',
+                                top: '+' + '363' + 'px'
                             }, 5000, function() {
                                 // Animation completed
 
-                                $("#bg_demo2_tomove_ImageDiv3").css("border", "1px solid black");
-                                $("#bg_demo2_tomove_TargetDiv3").css("border", "1px solid black");
+                                $("#bg_demo2_tomove_ImageDiv3").attr('class', 'targetFieldDemo');
+                                $("#bg_demo2_tomove_TargetDiv3").attr('class', 'origFieldDemo');
 
                                 setTimeout(function() {
 
 
-                                    $.mobile.changePage('#picturesStoryDemo7', {transition: "flip"});
+                                    $.mobile.changePage('#picturesStoryDemo7', {transition: "slide"});
                                 }, 2000);
                             });
                         }, 3000);
@@ -477,20 +493,23 @@ This html page should contain the whole process of this task as a collection of 
 
 
                 <div class="centredDiv">
-                    <table class="tableWithImages">
+                    <table class="tableWithImagesDemo">
                         <tr> 
 
-                            <td class="borderedImage"><image  src="css\images\story-pics\bg_demo1.jpg"/>   </td>
-                            <td class="targetField"><image />   </td> 
+                            <td class="selectedImage"><image  src="css\images\story-pics\bg_demo1.png"/>   </td>
+                            <td class="targetFieldDemo"> </td> 
 
                         </tr>
 
-
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
 
                         <tr> 
 
-                            <td class="targetField"><image  src="css\images\story-pics\bg_demo2.jpg"/>   </td>
-                            <td class="targetField"><image />   </td> 
+                            <td class="origFieldDemo"><image  src="css\images\story-pics\bg_demo2.png"/>   </td>
+                            <td class="targetFieldDemo"> </td> 
 
                         </tr>
 
@@ -498,7 +517,7 @@ This html page should contain the whole process of this task as a collection of 
                     </table>
                 </div>
 
-                <h1 class="hintText"> Tippen Sie das nächste Bild an. </h1>
+                <h1 class="hintText"> Jetzt weiter mit dem nächsten Bild. </h1>
 
             </div>
 
@@ -509,7 +528,7 @@ This html page should contain the whole process of this task as a collection of 
 
                     function showJustForWhile() {
                         setTimeout(function() {
-                            $.mobile.changePage('#picturesStoryDemo8', {transition: "flip"});
+                            $.mobile.changePage('#picturesStoryDemo8', {transition: "slide"});
                         }, 3000);
 
                     }
@@ -528,31 +547,34 @@ This html page should contain the whole process of this task as a collection of 
             <div data-role="content">
 
                 <div class="centredDiv">
-                    <table class="tableWithImages">
+                    <table class="tableWithImagesDemo">
                         <tr> 
 
-                            <td class="borderedImage" id="bg_demo1_tomove_ImageDiv1"><image class="imageTile" id="bg_demo1_tomove"  src="css\images\story-pics\bg_demo1.jpg"/>   </td>
-                            <td class="targetField"><image />   </td> 
+                            <td class="selectedImage" id="bg_demo1_tomove_ImageDiv1"><image class="imageTile" id="bg_demo1_tomove" src="css\images\story-pics\bg_demo1.png"/>   </td>
+                            <td class="targetFieldDemo"> </td> 
 
                         </tr>
 
-
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
 
                         <tr> 
 
-                            <td class="targetField" ><image  src="css\images\story-pics\bg_demo2.jpg"/>   </td>
-                            <td class="borderedImage" id="bg_demo1_tomove_TargetDiv1"><image />   </td> 
+                            <td class="origFieldDemo" ><image  src="css\images\story-pics\bg_demo2.png"/>   </td>
+                            <td class="selectedImage" id="bg_demo1_tomove_TargetDiv1"> </td> 
 
                         </tr>
 
 
                     </table>
                 </div>
-                
-                
+
+
                 <image src="css\images\btns-bg\bt-weiter.png" id="forwardBtn" class="defaultButton" style="visibility: hidden;"/>
 
-                <h1 class="hintText"> Tippen Sie jetzt das nächste Zielfeld an. </h1>
+                <h1 class="hintText"> Und weiter mit dem nächsten Zielfeld. </h1>
 
             </div>
 
@@ -565,21 +587,21 @@ This html page should contain the whole process of this task as a collection of 
                         // slide image to target field
                         setTimeout(function() {
                             $("#bg_demo1_tomove").animate({
-                                left: '+' + '337' + 'px',
-                                top: '+' + '340' + 'px'
+                                left: '+' + '215' + 'px',
+                                top: '+' + '363' + 'px'
                             }, 5000, function() {
                                 // Animation completed
 
-                                $("#bg_demo1_tomove_ImageDiv1").css("border", "1px solid black");
-                                $("#bg_demo1_tomove_TargetDiv1").css("border", "1px solid black");
-                                
+                                $("#bg_demo1_tomove_ImageDiv1").attr('class', 'targetFieldDemo');
+                                $("#bg_demo1_tomove_TargetDiv1").attr('class', 'origFieldDemo');
+
                                 // show forward button
                                 $("#forwardBtn").css("visibility", "visible");
 
                                 setTimeout(function() {
 
 
-                                    $.mobile.changePage('#forwardPage', {transition: "flip"});
+                                    $.mobile.changePage('#forwardPage', {transition: "slide"});
                                 }, 2000);
                             });
                         }, 3000);
@@ -599,7 +621,7 @@ This html page should contain the whole process of this task as a collection of 
         <div data-role="page" id="forwardPage" data-dom-cache=true class="introPage" >
 
             <div data-role="content">
-                
+
                 <image src="css\images\icons\info.png" class="infoIcon"/>
 
                 <center>
@@ -628,22 +650,25 @@ This html page should contain the whole process of this task as a collection of 
 
 
                 <div class="centredDiv">
-                    <table class="tableWithImages" id="task1_table">
+                    <table class="tableWithImagesTask1" id="task1_table">
                         <tr> 
 
-                            <td class="unborderedTd" onclick="selectImage(this, document.getElementById('task1_table'));" id="task1_img1_orig_td1" data-status="full" ><image  id="task1_img1" class="unborderedImage" src="css\images\story-pics\task1_img1.png"/>   </td>
-                            <td class="unborderedTd" onclick="selectImage(this, document.getElementById('task1_table'));"  id="task1_img2_orig_td2" data-status="full" ><image  id="task1_img2" class="unborderedImage" src="css\images\story-pics\task1_img2.png"/>   </td> 
-                            <td class="unborderedTd" onclick="selectImage(this, document.getElementById('task1_table'));"  id="task1_img3_orig_td3" data-status="full" ><image  id="task1_img3" class="unborderedImage" src="css\images\story-pics\task1_img3.png"/>   </td> 
+                            <td class="origField" onclick="selectImage(this, document.getElementById('task1_table'));" id="task1_img1_orig_td1" data-status="full" ><image  id="task1_img1" src="css\images\story-pics\task1_img1.png"/>   </td>
+                            <td class="origField" onclick="selectImage(this, document.getElementById('task1_table'));"  id="task1_img2_orig_td2" data-status="full" ><image  id="task1_img2" src="css\images\story-pics\task1_img2.png"/>   </td> 
+                            <td class="origField" onclick="selectImage(this, document.getElementById('task1_table'));"  id="task1_img3_orig_td3" data-status="full" ><image  id="task1_img3"  src="css\images\story-pics\task1_img3.png"/>   </td> 
 
                         </tr>
 
-
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
 
                         <tr> 
 
-                            <td class="unborderedTd" id="task1_img1_targ_td1" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task1_table'));" data-status="empty">   </td>
-                            <td class="unborderedTd" id="task1_img1_targ_td2" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task1_table'));" data-status="empty">  </td> 
-                            <td class="unborderedTd" id="task1_img1_targ_td3" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task1_table'));" data-status="empty">  </td> 
+                            <td class="targetField" id="task1_img1_targ_td1" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task1_table'));" data-status="empty">   </td>
+                            <td class="targetField" id="task1_img1_targ_td2" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task1_table'));" data-status="empty">  </td> 
+                            <td class="targetField" id="task1_img1_targ_td3" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task1_table'));" data-status="empty">  </td> 
 
                         </tr>
 
