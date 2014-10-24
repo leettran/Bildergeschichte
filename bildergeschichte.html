@@ -1,0 +1,707 @@
+<!--
+Within this html page the Bildergeschichte task of the Testbatterie will be presented.
+This html page should contain the whole process of this task as a collection of html5 pages.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Testbatterie-Aufgabe: Bildergeschichte</title>
+
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.0b1.min.css"/>       
+        <link rel="stylesheet" href="css/style.css" media="screen and (orientation: landscape)" type="text/css">  
+
+        <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.0rc2.min.js"></script>
+        <script type="text/javascript" src="js/jstorage.js"></script>
+        <script type="text/javascript" src="js/bildergeschichteScript.js"></script>
+
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    </head>
+
+
+
+
+    <body>
+
+        <!--startpage for neurocare testbatterie with task: Bildergeschichte-->
+        <div data-role="page" id="picturesStoryStart" data-dom-cache=true class="startPage" >
+
+
+            <div data-role="content">
+
+                <div class="testname">Aufgabe<br>Bildergeschichten ordnen</div>
+
+
+
+            </div>
+
+            <!--script used to show start page for few seconds and the to switch to intro page-->
+            <script type="text/javascript">
+
+                $(document).delegate('#picturesStoryStart', 'pageshow', function() {
+
+                    function showJustForWhile() {
+                        setTimeout(function() {
+                            $.mobile.changePage('#picturesStoryIntro', {transition: "flip"});
+                        }, 4000);
+
+                    }
+
+                    showJustForWhile();
+
+                });
+            </script>
+
+
+        </div> 
+
+
+        <!--intro page for neurocare testbatterie containing a small introduction to the task bildergeschichte-->
+        <div data-role="page" id="picturesStoryIntro" data-dom-cache=true class="introPage" >
+
+            <div data-role="content">
+                
+                <image src="css\images\icons\info.png" class="infoIcon"/>
+
+                <center>
+                    <p class="introText">
+                        Gleich sehen Sie in der oberen Bildschirmhälfte eine Geschichte, deren Bilder durcheinander sind. </br>
+                        Ihre Aufgabe ist es, sie wieder in die rictige Reihenfolge zu bringen, so dass die Geschichte eine zeitlich logische Abfolge bekommt. </br>
+                        Um ein Bild in ein Zielfeld zu bringen, tippen Sie zuerst das Bild und dann das Zielfeld an. Wenn Sie sich korrigieren müssen, dann tippen Sie zuerst das
+                        Bild im Feld und dann eine leere Stelle neben den anderen Bildern oben an. Wenn Sie der Meinung sind, alle Bilder richtig sortiert zu haben, dann drücken Sie "Weiter".
+
+                    </p>
+                </center>
+
+
+                <!--only for tests! later uncomment the first line!-->
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="goToDemoPage();"/>
+                <!--<image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="startPicturesStoryTask();"/>-->
+            </div>
+
+
+        </div> 
+
+
+        <!--slide to demo page for neurocare testbatterie containing a demonstration example to the task bildergeschichte-->
+        <div data-role="page" id="slideToPicturesStoryDemo" data-dom-cache=true class="introPage" >
+
+            <div data-role="content">
+                
+                <image src="css\images\icons\info.png" class="infoIcon"/>
+
+                <center>
+                    <p class="introText">
+                        Drücken Sie unten auf "Weiter", um sich ein Demo-Beispiel anzuschauen.
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="onShowDemo();"/>
+
+            </div>
+
+
+        </div>  
+
+
+
+        <!--demo page for neurocare testbatterie containing a demonstration example to the task bildergeschichte-->
+        <div data-role="page" id="picturesStoryDemo1" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+
+                <div class="centredDiv">
+                    <table class="tableWithImages">
+                        <tr> 
+
+                            <td class="targetField"><image  src="css\images\story-pics\bg_demo1.jpg"/>   </td>
+                            <td class="targetField"><image src="css\images\story-pics\bg_demo2.jpg"/>   </td> 
+
+                        </tr>
+
+
+
+                        <tr> 
+
+                            <td class="targetField"><image  />   </td>
+                            <td class="targetField"><image />   </td> 
+
+                        </tr>
+
+
+                    </table>
+
+                </div>
+
+                <h1 class="hintText"> Bringen Sie die oberen Bilder unten in die richtige Reihenfolge (von links nach rechts) </h1>
+            </div>
+
+
+            <script type="text/javascript">
+
+                $(document).delegate('#picturesStoryDemo1', 'pageshow', function() {
+
+                    function showJustForWhile() {
+                        setTimeout(function() {
+                            $.mobile.changePage('#picturesStoryDemo2', {transition: "flip"});
+                        }, 3000);
+
+                    }
+
+                    showJustForWhile();
+
+                });
+            </script>
+
+        </div>  
+
+
+        <!--demo page for neurocare testbatterie containing a demonstration example to the task bildergeschichte-->
+        <div data-role="page" id="picturesStoryDemo2" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+
+                <div class="centredDiv">
+                    <table class="tableWithImages">
+                        <tr> 
+
+                            <td class="targetField"><image  src="css\images\story-pics\bg_demo1.jpg"/>   </td>
+                            <td class="borderedImage"><image src="css\images\story-pics\bg_demo2.jpg" />   </td> 
+
+                        </tr>
+
+
+
+                        <tr> 
+
+                            <td class="targetField"><image  />   </td>
+                            <td class="targetField"><image />   </td> 
+
+                        </tr>
+
+
+                    </table>
+                </div>
+
+                <h1 class="hintText"> Tippen Sie ein Bild Ihrer Wahl an. </h1>
+
+            </div>
+
+
+            <script type="text/javascript">
+
+                $(document).delegate('#picturesStoryDemo2', 'pageshow', function() {
+
+                    function showJustForWhile() {
+                        setTimeout(function() {
+                            $.mobile.changePage('#picturesStoryDemo3', {transition: "flip"});
+                        }, 3000);
+
+                    }
+
+                    showJustForWhile();
+
+                });
+            </script>
+
+        </div> 
+
+
+
+        <!--demo page for neurocare testbatterie containing a demonstration example to the task bildergeschichte-->
+        <div data-role="page" id="picturesStoryDemo3" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+                <div class="centredDiv">
+                    <table class="tableWithImages">
+                        <tr> 
+
+                            <td class="targetField"><image  src="css\images\story-pics\bg_demo1.jpg"/>   </td>
+                            <td class="borderedImage" id="bg_demo2_tomove_ImageDiv1"><image id="bg_demo2_tomove" class="imageTile" src="css\images\story-pics\bg_demo2.jpg"/>   </td> 
+
+                        </tr>
+
+
+
+                        <tr> 
+
+                            <td class="borderedImage" id="bg_demo2_tomove_TargetDiv1"><image  />   </td>
+                            <td class="targetField"><image />   </td> 
+
+                        </tr>
+
+
+                    </table>
+                </div>
+
+                <h1 class="hintText"> Tippen Sie jetzt das Zielfeld an, um das Bild dahin zu bewegen. </h1>
+
+            </div>
+
+
+            <script type="text/javascript">
+
+                $(document).delegate('#picturesStoryDemo3', 'pageshow', function() {
+
+                    function showJustForWhile() {
+                        // slide image to target field
+                        setTimeout(function() {
+                            $("#bg_demo2_tomove").animate({
+                                left: '-' + '337' + 'px',
+                                top: '+' + '340' + 'px'
+                            }, 5000, function() {
+                                // Animation completed
+
+                                $("#bg_demo2_tomove_ImageDiv1").css("border", "1px solid black");
+                                $("#bg_demo2_tomove_TargetDiv1").css("border", "1px solid black");
+
+                                setTimeout(function() {
+
+
+                                    $.mobile.changePage('#picturesStoryDemo4', {transition: "flip"});
+                                }, 2000);
+                            });
+                        }, 3000);
+
+                    }
+
+                    showJustForWhile();
+
+                });
+            </script>
+
+        </div> 
+
+
+        <!--demo page for neurocare testbatterie containing a demonstration example to the task bildergeschichte-->
+        <div data-role="page" id="picturesStoryDemo4" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+                <div class="centredDiv">
+                    <table class="tableWithImages">
+                        <tr> 
+
+                            <td class="targetField"><image  src="css\images\story-pics\bg_demo1.jpg"/>   </td>
+                            <td class="targetField" ><image />   </td> 
+
+                        </tr>
+
+
+
+
+                        <tr> 
+
+                            <td class="borderedImage"><image  src="css\images\story-pics\bg_demo2.jpg" />   </td>
+                            <td class="targetField"><image />   </td> 
+
+                        </tr>
+
+
+                    </table>
+                </div>
+
+                <h1 class="hintText"> Wenn Sie sich korrigieren wollen, tippen Sie das Bild im Zielfeld erneut an. </h1>
+
+            </div>
+
+
+            <script type="text/javascript">
+
+                $(document).delegate('#picturesStoryDemo4', 'pageshow', function() {
+
+                    function showJustForWhile() {
+                        setTimeout(function() {
+                            $.mobile.changePage('#picturesStoryDemo5', {transition: "flip"});
+                        }, 3000);
+
+                    }
+
+                    showJustForWhile();
+
+                });
+            </script>
+
+        </div> 
+
+
+
+
+
+        <!--demo page for neurocare testbatterie containing a demonstration example to the task bildergeschichte-->
+        <div data-role="page" id="picturesStoryDemo5" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+                <div class="centredDiv">
+                    <table class="tableWithImages">
+                        <tr> 
+
+                            <td class="targetField"><image  src="css\images\story-pics\bg_demo1.jpg"/>   </td>
+                            <td class="borderedImage" id="bg_demo2_tomove_ImageDiv2"><image id="bg_demo2_correct"/>   </td> 
+
+                        </tr>
+
+
+
+                        <tr> 
+
+                            <td class="borderedImage" id="bg_demo2_tomove_TargetDiv2"><image class="imageTile" id="bg_demo_tf1_correct" src="css\images\story-pics\bg_demo2.jpg"/>   </td>
+                            <td class="targetField"><image />   </td> 
+
+                        </tr>
+
+
+                    </table>
+                </div>
+
+                <h1 class="hintText"> Tippen Sie dann eine Leere Stelle an, um das Bild zurück zu bewegen. </h1>
+
+            </div>
+
+
+            <script type="text/javascript">
+
+                $(document).delegate('#picturesStoryDemo5', 'pageshow', function() {
+
+                    function showJustForWhile() {
+                        // slide image to target field
+                        setTimeout(function() {
+                            $("#bg_demo_tf1_correct").animate({
+                                left: '+' + '337' + 'px',
+                                top: '-' + '340' + 'px'
+//                                height: "toggle"
+                            }, 5000, function() {
+                                // Animation completed
+
+
+                                $("#bg_demo2_tomove_ImageDiv2").css("border", "1px solid black");
+                                $("#bg_demo2_tomove_TargetDiv2").css("border", "1px solid black");
+
+                                setTimeout(function() {
+
+
+                                    $.mobile.changePage('#picturesStoryDemo6', {transition: "flip"});
+                                }, 2000);
+                            });
+                        }, 3000);
+                    }
+
+                    showJustForWhile();
+                });
+            </script>
+
+        </div> 
+
+
+        <!--demo page for neurocare testbatterie containing a demonstration example to the task bildergeschichte-->
+        <div data-role="page" id="picturesStoryDemo6" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+                <div class="centredDiv">
+                    <table class="tableWithImages">
+                        <tr> 
+
+                            <td class="targetField"><image  src="css\images\story-pics\bg_demo1.jpg"/>   </td>
+                            <td class="borderedImage" id="bg_demo2_tomove_ImageDiv3"><image id="bg_demo2_tomove2" class="imageTile" src="css\images\story-pics\bg_demo2.jpg"/>   </td> 
+
+                        </tr>
+
+
+
+                        <tr> 
+
+                            <td class="borderedImage" id="bg_demo2_tomove_TargetDiv3"><image  />   </td>
+                            <td class="targetField"><image />   </td> 
+
+                        </tr>
+
+
+                    </table>
+                </div>
+
+                <h1 class="hintText"> Fahren Sie jetzt fort bitte. </h1>
+
+            </div>
+
+
+            <script type="text/javascript">
+
+                $(document).delegate('#picturesStoryDemo6', 'pageshow', function() {
+
+                    function showJustForWhile() {
+                        // slide image to target field
+                        setTimeout(function() {
+                            $("#bg_demo2_tomove2").animate({
+                                left: '-' + '337' + 'px',
+                                top: '+' + '340' + 'px'
+                            }, 5000, function() {
+                                // Animation completed
+
+                                $("#bg_demo2_tomove_ImageDiv3").css("border", "1px solid black");
+                                $("#bg_demo2_tomove_TargetDiv3").css("border", "1px solid black");
+
+                                setTimeout(function() {
+
+
+                                    $.mobile.changePage('#picturesStoryDemo7', {transition: "flip"});
+                                }, 2000);
+                            });
+                        }, 3000);
+
+                    }
+
+                    showJustForWhile();
+
+                });
+            </script>
+
+        </div>
+
+
+        <!--demo page for neurocare testbatterie containing a demonstration example to the task bildergeschichte-->
+        <div data-role="page" id="picturesStoryDemo7" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+
+                <div class="centredDiv">
+                    <table class="tableWithImages">
+                        <tr> 
+
+                            <td class="borderedImage"><image  src="css\images\story-pics\bg_demo1.jpg"/>   </td>
+                            <td class="targetField"><image />   </td> 
+
+                        </tr>
+
+
+
+                        <tr> 
+
+                            <td class="targetField"><image  src="css\images\story-pics\bg_demo2.jpg"/>   </td>
+                            <td class="targetField"><image />   </td> 
+
+                        </tr>
+
+
+                    </table>
+                </div>
+
+                <h1 class="hintText"> Tippen Sie das nächste Bild an. </h1>
+
+            </div>
+
+
+            <script type="text/javascript">
+
+                $(document).delegate('#picturesStoryDemo7', 'pageshow', function() {
+
+                    function showJustForWhile() {
+                        setTimeout(function() {
+                            $.mobile.changePage('#picturesStoryDemo8', {transition: "flip"});
+                        }, 3000);
+
+                    }
+
+                    showJustForWhile();
+
+                });
+            </script>
+
+        </div> 
+
+
+        <!--demo page for neurocare testbatterie containing a demonstration example to the task bildergeschichte-->
+        <div data-role="page" id="picturesStoryDemo8" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+                <div class="centredDiv">
+                    <table class="tableWithImages">
+                        <tr> 
+
+                            <td class="borderedImage" id="bg_demo1_tomove_ImageDiv1"><image class="imageTile" id="bg_demo1_tomove"  src="css\images\story-pics\bg_demo1.jpg"/>   </td>
+                            <td class="targetField"><image />   </td> 
+
+                        </tr>
+
+
+
+                        <tr> 
+
+                            <td class="targetField" ><image  src="css\images\story-pics\bg_demo2.jpg"/>   </td>
+                            <td class="borderedImage" id="bg_demo1_tomove_TargetDiv1"><image />   </td> 
+
+                        </tr>
+
+
+                    </table>
+                </div>
+                
+                
+                <image src="css\images\btns-bg\bt-weiter.png" id="forwardBtn" class="defaultButton" style="visibility: hidden;"/>
+
+                <h1 class="hintText"> Tippen Sie jetzt das nächste Zielfeld an. </h1>
+
+            </div>
+
+
+            <script type="text/javascript">
+
+                $(document).delegate('#picturesStoryDemo8', 'pageshow', function() {
+
+                    function showJustForWhile() {
+                        // slide image to target field
+                        setTimeout(function() {
+                            $("#bg_demo1_tomove").animate({
+                                left: '+' + '337' + 'px',
+                                top: '+' + '340' + 'px'
+                            }, 5000, function() {
+                                // Animation completed
+
+                                $("#bg_demo1_tomove_ImageDiv1").css("border", "1px solid black");
+                                $("#bg_demo1_tomove_TargetDiv1").css("border", "1px solid black");
+                                
+                                // show forward button
+                                $("#forwardBtn").css("visibility", "visible");
+
+                                setTimeout(function() {
+
+
+                                    $.mobile.changePage('#forwardPage', {transition: "flip"});
+                                }, 2000);
+                            });
+                        }, 3000);
+
+                    }
+
+                    showJustForWhile();
+
+                });
+            </script>
+
+        </div> 
+
+
+
+        <!--forwarding page to start the task-->
+        <div data-role="page" id="forwardPage" data-dom-cache=true class="introPage" >
+
+            <div data-role="content">
+                
+                <image src="css\images\icons\info.png" class="infoIcon"/>
+
+                <center>
+                    <p class="introText">
+                        Tippen Sie folgende Schaltfläche, um die Aufgabe zu starten.
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="startPicturesStoryTask();"/>
+
+
+
+            </div>
+
+
+        </div> 
+
+
+
+        <!--first task of the bildergeschichte-->
+        <div data-role="page" id="task1" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+
+                <div class="centredDiv">
+                    <table class="tableWithImages" id="task1_table">
+                        <tr> 
+
+                            <td class="unborderedTd" onclick="selectImage(this, document.getElementById('task1_table'));" id="task1_img1_orig_td1" data-status="full" ><image  id="task1_img1" class="unborderedImage" src="css\images\story-pics\task1_img1.png"/>   </td>
+                            <td class="unborderedTd" onclick="selectImage(this, document.getElementById('task1_table'));"  id="task1_img2_orig_td2" data-status="full" ><image  id="task1_img2" class="unborderedImage" src="css\images\story-pics\task1_img2.png"/>   </td> 
+                            <td class="unborderedTd" onclick="selectImage(this, document.getElementById('task1_table'));"  id="task1_img3_orig_td3" data-status="full" ><image  id="task1_img3" class="unborderedImage" src="css\images\story-pics\task1_img3.png"/>   </td> 
+
+                        </tr>
+
+
+
+                        <tr> 
+
+                            <td class="unborderedTd" id="task1_img1_targ_td1" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task1_table'));" data-status="empty">   </td>
+                            <td class="unborderedTd" id="task1_img1_targ_td2" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task1_table'));" data-status="empty">  </td> 
+                            <td class="unborderedTd" id="task1_img1_targ_td3" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task1_table'));" data-status="empty">  </td> 
+
+                        </tr>
+
+
+                    </table>
+
+                </div>
+
+                <h1 class="hintText"> Bringen Sie die oberen Bilder unten in die richtige Reihenfolge (von links nach rechts) </h1>
+            </div>
+
+
+        </div>  
+
+
+        <!--second task of the bildergeschichte-->
+        <div data-role="page" id="task2" data-dom-cache=true class="whitePage">
+
+            <div data-role="content">
+
+
+                <div class="centredDiv">
+                    <table class="tableWithImages" id="task2_table">
+                        <tr> 
+
+                            <td class="unborderedTd" onclick="selectImage(this, document.getElementById('task2_table'));" id="task2_img1_orig_td1" data-status="full" ><image  id="task2_img1" class="unborderedImage" src="css\images\story-pics\task2_img1.png"/>   </td>
+                            <td class="unborderedTd" onclick="selectImage(this, document.getElementById('task2_table'));"  id="task2_img2_orig_td2" data-status="full" ><image  id="task2_img2" class="unborderedImage" src="css\images\story-pics\task2_img2.png"/>   </td> 
+                            <td class="unborderedTd" onclick="selectImage(this, document.getElementById('task2_table'));"  id="task2_img3_orig_td3" data-status="full" ><image  id="task2_img3" class="unborderedImage" src="css\images\story-pics\task2_img3.png"/>   </td> 
+                            <td class="unborderedTd" onclick="selectImage(this, document.getElementById('task2_table'));"  id="task2_img4_orig_td4" data-status="full" ><image  id="task2_img4" class="unborderedImage" src="css\images\story-pics\task2_img4.png"/>   </td> 
+
+                        </tr>
+
+
+
+                        <tr> 
+
+                            <td class="unborderedTd" id="task2_img1_targ_td1" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task2_table'));" data-status="empty">   </td>
+                            <td class="unborderedTd" id="task2_img1_targ_td2" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task2_table'));" data-status="empty">  </td> 
+                            <td class="unborderedTd" id="task2_img1_targ_td3" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task2_table'));" data-status="empty">  </td> 
+                            <td class="unborderedTd" id="task2_img1_targ_td4" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task2_table'));" data-status="empty">  </td> 
+
+                        </tr>
+
+
+                    </table>
+
+                </div>
+
+                <h1 class="hintText"> Bringen Sie die oberen Bilder unten in die richtige Reihenfolge (von links nach rechts) </h1>
+            </div>
+
+
+        </div> 
+
+
+
+    </body>
+
+
+
+</html>
