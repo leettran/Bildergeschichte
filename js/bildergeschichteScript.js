@@ -38,6 +38,96 @@ function onShowDemo() {
 
 }
 
+// to switch to task2
+function goToTask2() {
+
+    try
+    {
+        $.mobile.changePage('#task2', {transition: "flip"});
+        $(".whitePage").find("[data-type=forwardBtn]").css("visibility", "hidden");
+        $(".whitePage").find(".hintText").css("visibility", "visible");
+    }
+
+    catch (error) {
+        console.log("An error has been occured! " + error);
+    }
+}
+
+// to switch to task2
+function goToTask3() {
+
+    try
+    {
+        $.mobile.changePage('#task3', {transition: "flip"});
+        $(".whitePage").find("[data-type=forwardBtn]").css("visibility", "hidden");
+        $(".whitePage").find(".hintText").css("visibility", "visible");
+    }
+
+    catch (error) {
+        console.log("An error has been occured! " + error);
+    }
+}
+
+// to switch to task4
+function goToTask4() {
+
+    try
+    {
+        $.mobile.changePage('#task4', {transition: "flip"});
+        $(".whitePage").find("[data-type=forwardBtn]").css("visibility", "hidden");
+        $(".whitePage").find(".hintText").css("visibility", "visible");
+    }
+
+    catch (error) {
+        console.log("An error has been occured! " + error);
+    }
+}
+
+// to switch to task5
+function goToTask5() {
+
+    try
+    {
+        $.mobile.changePage('#task5', {transition: "flip"});
+        $(".whitePage").find("[data-type=forwardBtn]").css("visibility", "hidden");
+        $(".whitePage").find(".hintText").css("visibility", "visible");
+    }
+
+    catch (error) {
+        console.log("An error has been occured! " + error);
+    }
+}
+
+// to switch to task6
+function goToTask6() {
+
+    try
+    {
+        $.mobile.changePage('#task6', {transition: "flip"});
+        $(".whitePage").find("[data-type=forwardBtn]").css("visibility", "hidden");
+        $(".whitePage").find(".hintText").css("visibility", "visible");
+    }
+
+    catch (error) {
+        console.log("An error has been occured! " + error);
+    }
+}
+
+// to switch to end page
+function goToEndpage() {
+
+    try
+    {
+        $.mobile.changePage('#endPage', {transition: "flip"});
+        $(".whitePage").find("[data-type=forwardBtn]").css("visibility", "hidden");
+        $(".whitePage").find(".hintText").css("visibility", "visible");
+    }
+
+    catch (error) {
+        console.log("An error has been occured! " + error);
+    }
+}
+
 
 // starts the pictures story task
 function startPicturesStoryTask() {
@@ -138,11 +228,19 @@ function slideImageToTargetField(targetTd, mainTable) {
                 // remove highlighting
                 $('#' + selectedTd_Id).attr('class', 'targetField');
                 $('#' + clickedTargetId).attr('class', 'origField');
+                
+                // check if all target fields are full 
+            if (allFieldsMatched(mainTable)){
+               $(".whitePage").find("[data-type=forwardBtn]").css("visibility", "visible");
+                $(".whitePage").find(".hintText").css("visibility", "hidden");
+            }
 
             }, 100);
             
             // reset selection bool
             imageSelected = false;
+            
+            
 
 
 
@@ -197,3 +295,33 @@ function slideImageToTargetField(targetTd, mainTable) {
 }
 
 
+function allFieldsMatched(mainTable){
+    
+    var matchedTds = 0;
+    var allMatched = false;
+    try
+    {
+        var allTds = mainTable.getElementsByTagName('td');
+         for (var i = 0; i < allTds.length; i++) {
+                var id = allTds[i].id;
+                var tdType = $("#" + id).data("type");
+                var tdStatus = $("#" + id).data("status");
+                // check if target field is matched with image
+                if (tdType === "source" && tdStatus === "empty") {
+                    // count matched fields
+                    matchedTds++;
+                }
+
+            }
+            
+            // when all fields are matched 
+            if (matchedTds === ((allTds.length-1)/2))
+                allMatched = true;
+    }
+    
+    catch (error) {
+        console.log("An error has been occured! " + error);
+    }
+    
+    return allMatched;
+}

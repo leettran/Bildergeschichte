@@ -286,7 +286,7 @@
 
     .centredDiv
     {
-        width: 1024px;
+        width: auto;
         display: block;
         margin-left: auto;
         margin-right: auto;
@@ -438,6 +438,41 @@
         width: 601px; 
     }
 
+    .tableWithImagesTask2{
+       border-collapse:separate; 
+        border-spacing: 1em;
+        margin: 0 auto;
+        width: 804px; 
+    }
+    
+    .tableWithImagesTask3{
+       border-collapse:separate; 
+        border-spacing: 1em;
+        margin: 0 auto;
+        width: 804px; 
+    }
+    
+     .tableWithImagesTask4{
+       border-collapse:separate; 
+        border-spacing: 1em;
+        margin: 0 auto;
+        width: 1007px; 
+    }
+    
+     .tableWithImagesTask5{
+       border-collapse:separate; 
+        border-spacing: 1em;
+        margin: 0 auto;
+        width: 1007px; 
+    }
+    
+    .tableWithImagesTask6{
+       border-collapse:separate; 
+        border-spacing: 1em;
+        margin: 0 auto;
+        width: 1007px; 
+    }
+    
     .borderedTargetField{
 
         border:5px solid orange;

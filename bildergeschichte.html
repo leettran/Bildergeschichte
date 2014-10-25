@@ -653,9 +653,9 @@ This html page should contain the whole process of this task as a collection of 
                     <table class="tableWithImagesTask1" id="task1_table">
                         <tr> 
 
-                            <td class="origField" onclick="selectImage(this, document.getElementById('task1_table'));" id="task1_img1_orig_td1" data-status="full" ><image  id="task1_img1" src="css\images\story-pics\task1_img1.png"/>   </td>
-                            <td class="origField" onclick="selectImage(this, document.getElementById('task1_table'));"  id="task1_img2_orig_td2" data-status="full" ><image  id="task1_img2" src="css\images\story-pics\task1_img2.png"/>   </td> 
-                            <td class="origField" onclick="selectImage(this, document.getElementById('task1_table'));"  id="task1_img3_orig_td3" data-status="full" ><image  id="task1_img3"  src="css\images\story-pics\task1_img3.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task1_table'));" id="task1_img1_orig_td1" data-status="full" ><image  id="task1_img1" src="css\images\story-pics\task1_img1.png"/>   </td>
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task1_table'));"  id="task1_img2_orig_td2" data-status="full" ><image  id="task1_img2" src="css\images\story-pics\task1_img2.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task1_table'));"  id="task1_img3_orig_td3" data-status="full" ><image  id="task1_img3"  src="css\images\story-pics\task1_img3.png"/>   </td> 
 
                         </tr>
 
@@ -666,9 +666,9 @@ This html page should contain the whole process of this task as a collection of 
 
                         <tr> 
 
-                            <td class="targetField" id="task1_img1_targ_td1" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task1_table'));" data-status="empty">   </td>
-                            <td class="targetField" id="task1_img1_targ_td2" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task1_table'));" data-status="empty">  </td> 
-                            <td class="targetField" id="task1_img1_targ_td3" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task1_table'));" data-status="empty">  </td> 
+                            <td class="targetField" id="task1_img1_targ_td1"  data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task1_table'));" data-status="empty">   </td>
+                            <td class="targetField" id="task1_img2_targ_td2"  data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task1_table'));" data-status="empty">  </td> 
+                            <td class="targetField" id="task1_img3_targ_td3"  data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task1_table'));" data-status="empty">  </td> 
 
                         </tr>
 
@@ -677,7 +677,10 @@ This html page should contain the whole process of this task as a collection of 
 
                 </div>
 
+                <image src="css\images\btns-bg\bt-weiter.png"  data-type="forwardBtn"  class="defaultButton" style="visibility: hidden;" onclick="goToTask2();"/>
+
                 <h1 class="hintText"> Bringen Sie die oberen Bilder unten in die richtige Reihenfolge (von links nach rechts) </h1>
+
             </div>
 
 
@@ -691,24 +694,27 @@ This html page should contain the whole process of this task as a collection of 
 
 
                 <div class="centredDiv">
-                    <table class="tableWithImages" id="task2_table">
+                    <table class="tableWithImagesTask2" id="task2_table">
                         <tr> 
 
-                            <td class="unborderedTd" onclick="selectImage(this, document.getElementById('task2_table'));" id="task2_img1_orig_td1" data-status="full" ><image  id="task2_img1" class="unborderedImage" src="css\images\story-pics\task2_img1.png"/>   </td>
-                            <td class="unborderedTd" onclick="selectImage(this, document.getElementById('task2_table'));"  id="task2_img2_orig_td2" data-status="full" ><image  id="task2_img2" class="unborderedImage" src="css\images\story-pics\task2_img2.png"/>   </td> 
-                            <td class="unborderedTd" onclick="selectImage(this, document.getElementById('task2_table'));"  id="task2_img3_orig_td3" data-status="full" ><image  id="task2_img3" class="unborderedImage" src="css\images\story-pics\task2_img3.png"/>   </td> 
-                            <td class="unborderedTd" onclick="selectImage(this, document.getElementById('task2_table'));"  id="task2_img4_orig_td4" data-status="full" ><image  id="task2_img4" class="unborderedImage" src="css\images\story-pics\task2_img4.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task2_table'));" id="task2_img1_orig_td1" data-status="full" ><image  id="task2_img1"  src="css\images\story-pics\task2_img1.png"/>   </td>
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task2_table'));"  id="task2_img2_orig_td2" data-status="full" ><image  id="task2_img2"  src="css\images\story-pics\task2_img2.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task2_table'));"  id="task2_img3_orig_td3" data-status="full" ><image  id="task2_img3"  src="css\images\story-pics\task2_img3.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task2_table'));"  id="task2_img4_orig_td4" data-status="full" ><image  id="task2_img4"  src="css\images\story-pics\task2_img4.png"/>   </td> 
 
                         </tr>
 
-
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
 
                         <tr> 
 
-                            <td class="unborderedTd" id="task2_img1_targ_td1" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task2_table'));" data-status="empty">   </td>
-                            <td class="unborderedTd" id="task2_img1_targ_td2" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task2_table'));" data-status="empty">  </td> 
-                            <td class="unborderedTd" id="task2_img1_targ_td3" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task2_table'));" data-status="empty">  </td> 
-                            <td class="unborderedTd" id="task2_img1_targ_td4" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task2_table'));" data-status="empty">  </td> 
+                            <td class="targetField" id="task2_img1_targ_td1" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task2_table'));" data-status="empty">   </td>
+                            <td class="targetField" id="task2_img2_targ_td2" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task2_table'));" data-status="empty">  </td> 
+                            <td class="targetField" id="task2_img3_targ_td3" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task2_table'));" data-status="empty">  </td> 
+                            <td class="targetField" id="task2_img4_targ_td4" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task2_table'));" data-status="empty">  </td> 
 
                         </tr>
 
@@ -717,13 +723,228 @@ This html page should contain the whole process of this task as a collection of 
 
                 </div>
 
+
+                <image src="css\images\btns-bg\bt-weiter.png" data-type="forwardBtn" href="#task3" class="defaultButton" style="visibility: hidden;" onclick="goToTask3();"/>
                 <h1 class="hintText"> Bringen Sie die oberen Bilder unten in die richtige Reihenfolge (von links nach rechts) </h1>
+
             </div>
 
 
         </div> 
 
 
+
+        <!--third task of the bildergeschichte-->
+        <div data-role="page" id="task3" data-dom-cache=true class="whitePage">
+
+            <div data-role="content">
+
+
+                <div class="centredDiv">
+                    <table class="tableWithImagesTask3" id="task3_table">
+                        <tr> 
+
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task3_table'));" id="task3_img1_orig_td1" data-status="full" ><image  id="task3_img1"  src="css\images\story-pics\task3_img1.png"/>   </td>
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task3_table'));"  id="task3_img2_orig_td2" data-status="full" ><image  id="task3_img2"  src="css\images\story-pics\task3_img2.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task3_table'));"  id="task3_img3_orig_td3" data-status="full" ><image  id="task3_img3"  src="css\images\story-pics\task3_img3.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task3_table'));"  id="task3_img4_orig_td4" data-status="full" ><image  id="task3_img4"  src="css\images\story-pics\task3_img4.png"/>   </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+                        <tr> 
+
+                            <td class="targetField" id="task3_img1_targ_td1" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task3_table'));" data-status="empty">   </td>
+                            <td class="targetField" id="task3_img2_targ_td2" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task3_table'));" data-status="empty">  </td> 
+                            <td class="targetField" id="task3_img3_targ_td3" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task3_table'));" data-status="empty">  </td> 
+                            <td class="targetField" id="task3_img4_targ_td4" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task3_table'));" data-status="empty">  </td> 
+
+                        </tr>
+
+
+                    </table>
+
+                </div>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" data-type="forwardBtn" class="defaultButton" style="visibility: hidden;" onclick="goToTask4();"/>
+                <h1 class="hintText"> Bringen Sie die oberen Bilder unten in die richtige Reihenfolge (von links nach rechts) </h1>
+
+            </div>
+
+
+        </div> 
+        
+        
+        <!--fourth task of the bildergeschichte-->
+        <div data-role="page" id="task4" data-dom-cache=true class="whitePage">
+
+            <div data-role="content">
+
+
+                <div class="centredDiv">
+                    <table class="tableWithImagesTask4" id="task4_table">
+                        <tr> 
+
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task4_table'));" id="task4_img1_orig_td1" data-status="full" ><image  id="task4_img1"  src="css\images\story-pics\task4_img1.png"/>   </td>
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task4_table'));"  id="task4_img2_orig_td2" data-status="full" ><image  id="task4_img2"  src="css\images\story-pics\task4_img2.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task4_table'));"  id="task4_img3_orig_td3" data-status="full" ><image  id="task4_img3"  src="css\images\story-pics\task4_img3.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task4_table'));"  id="task4_img4_orig_td4" data-status="full" ><image  id="task4_img4"  src="css\images\story-pics\task4_img4.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task4_table'));"  id="task4_img5_orig_td5" data-status="full" ><image  id="task4_img5"  src="css\images\story-pics\task4_img5.png"/>   </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+                        <tr> 
+
+                            <td class="targetField" id="task4_img1_targ_td1" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task4_table'));" data-status="empty">   </td>
+                            <td class="targetField" id="task4_img2_targ_td2" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task4_table'));" data-status="empty">  </td> 
+                            <td class="targetField" id="task4_img3_targ_td3" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task4_table'));" data-status="empty">  </td> 
+                            <td class="targetField" id="task4_img4_targ_td4" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task4_table'));" data-status="empty">  </td> 
+                            <td class="targetField" id="task4_img5_targ_td5" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task4_table'));" data-status="empty">  </td> 
+
+                        </tr>
+
+
+                    </table>
+
+                </div>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" data-type="forwardBtn" class="defaultButton" style="visibility: hidden;" onclick="goToTask5();"/>
+                <h1 class="hintText"> Bringen Sie die oberen Bilder unten in die richtige Reihenfolge (von links nach rechts) </h1>
+
+            </div>
+
+
+        </div> 
+        
+        
+        
+         <!--fifth task of the bildergeschichte-->
+        <div data-role="page" id="task5" data-dom-cache=true class="whitePage">
+
+            <div data-role="content">
+
+
+                <div class="centredDiv">
+                    <table class="tableWithImagesTask5" id="task5_table">
+                        <tr> 
+
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task5_table'));" id="task5_img1_orig_td1" data-status="full" ><image  id="task5_img1"  src="css\images\story-pics\task5_img1.png"/>   </td>
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task5_table'));"  id="task5_img2_orig_td2" data-status="full" ><image  id="task5_img2"  src="css\images\story-pics\task5_img2.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task5_table'));"  id="task5_img3_orig_td3" data-status="full" ><image  id="task5_img3"  src="css\images\story-pics\task5_img3.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task5_table'));"  id="task5_img4_orig_td4" data-status="full" ><image  id="task5_img4"  src="css\images\story-pics\task5_img4.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task5_table'));"  id="task5_img5_orig_td5" data-status="full" ><image  id="task5_img5"  src="css\images\story-pics\task5_img5.png"/>   </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+                        <tr> 
+
+                            <td class="targetField" id="task5_img1_targ_td1" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task5_table'));" data-status="empty">   </td>
+                            <td class="targetField" id="task5_img2_targ_td2" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task5_table'));" data-status="empty">  </td> 
+                            <td class="targetField" id="task5_img3_targ_td3" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task5_table'));" data-status="empty">  </td> 
+                            <td class="targetField" id="task5_img4_targ_td4" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task5_table'));" data-status="empty">  </td> 
+                            <td class="targetField" id="task5_img5_targ_td5" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task5_table'));" data-status="empty">  </td> 
+
+                        </tr>
+
+
+                    </table>
+
+                </div>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" data-type="forwardBtn" class="defaultButton" style="visibility: hidden;" onclick="goToTask6();"/>
+                <h1 class="hintText"> Bringen Sie die oberen Bilder unten in die richtige Reihenfolge (von links nach rechts) </h1>
+
+            </div>
+
+
+        </div> 
+         
+         
+         
+         
+          <!--sixth task of the bildergeschichte-->
+        <div data-role="page" id="task6" data-dom-cache=true class="whitePage">
+
+            <div data-role="content">
+
+
+                <div class="centredDiv">
+                    <table class="tableWithImagesTask6" id="task6_table">
+                        <tr> 
+
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task6_table'));" id="task6_img1_orig_td1" data-status="full" ><image  id="task6_img1"  src="css\images\story-pics\task6_img1.png"/>   </td>
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task6_table'));"  id="task6_img2_orig_td2" data-status="full" ><image  id="task6_img2"  src="css\images\story-pics\task6_img2.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task6_table'));"  id="task6_img3_orig_td3" data-status="full" ><image  id="task6_img3"  src="css\images\story-pics\task6_img3.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task6_table'));"  id="task6_img4_orig_td4" data-status="full" ><image  id="task6_img4"  src="css\images\story-pics\task6_img4.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task6_table'));"  id="task6_img5_orig_td5" data-status="full" ><image  id="task6_img5"  src="css\images\story-pics\task6_img5.png"/>   </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+                        <tr> 
+
+                            <td class="targetField" id="task6_img1_targ_td1" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task6_table'));" data-status="empty">   </td>
+                            <td class="targetField" id="task6_img2_targ_td2" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task6_table'));" data-status="empty">  </td> 
+                            <td class="targetField" id="task6_img3_targ_td3" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task6_table'));" data-status="empty">  </td> 
+                            <td class="targetField" id="task6_img4_targ_td4" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task6_table'));" data-status="empty">  </td> 
+                            <td class="targetField" id="task6_img5_targ_td5" data-status="empty" onclick="slideImageToTargetField(this, document.getElementById('task6_table'));" data-status="empty">  </td> 
+
+                        </tr>
+
+
+                    </table>
+
+                </div>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" data-type="forwardBtn" class="defaultButton" style="visibility: hidden;" onclick="goToEndpage();"/>
+                <h1 class="hintText"> Bringen Sie die oberen Bilder unten in die richtige Reihenfolge (von links nach rechts) </h1>
+
+            </div>
+
+
+        </div> 
+
+ <!--end page of the task bildergeschichte-->
+        <div data-role="page" id="endPage" data-dom-cache=true class="introPage" >
+
+            <div data-role="content">
+
+                <image src="css\images\icons\tipp.png" class="infoIcon"/>
+
+                <center>
+                    <h1 class="taskEndText">Diese Aufgabe haben Sie geschafft!</h1>
+
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" />
+
+            </div>
+
+
+        </div> 
 
     </body>
 
