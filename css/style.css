@@ -456,21 +456,21 @@
        border-collapse:separate; 
         border-spacing: 1em;
         margin: 0 auto;
-        width: 1024px; 
+        width: 100%; 
     }
     
      .tableWithImagesTask5{
        border-collapse:separate; 
         border-spacing: 1em;
         margin: 0 auto;
-        width: 1024px; 
+        width: 100%; 
     }
     
     .tableWithImagesTask6{
        border-collapse:separate; 
         border-spacing: 1em;
         margin: 0 auto;
-        width: 1024px; 
+        width: 100%; 
     }
     
     .borderedTargetField{
