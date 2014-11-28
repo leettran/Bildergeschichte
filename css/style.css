@@ -307,10 +307,7 @@
         opacity: 0.7;
         box-shadow: 5px 5px 5px #64C463;
         border:2px solid #64C463;
-        /*        position: relative;
-                width: auto;
-                height: auto;*/
-
+       
     }
 
     .borderedTd{
@@ -335,10 +332,10 @@
     
      .targetField{
         border:1px solid black; 
-        min-width: 195px;
-        min-height: 200px;
-        width: 195px;
-        height: 200px;
+        min-width: 175px;
+        min-height: 180px;
+        width: 175px;
+        height: 180px;
 
     }
     
@@ -362,10 +359,10 @@
     
     .origField{
         border:1px solid white;
-        min-width: 195px;
-        min-height: 200px;
-        width: 195px;
-        height: 200px;
+        min-width: 175px;
+        min-height: 180px;
+        width: 175px;
+        height: 180px;
     }
     
      .origFieldSmall{
@@ -452,42 +449,42 @@
        border-collapse:separate; 
         border-spacing: 1em;
         margin: 0 auto;
-        width: 601px; 
+        width: 533px; 
     }
 
     .tableWithImagesTask2{
        border-collapse:separate; 
         border-spacing: 1em;
         margin: 0 auto;
-        width: 804px; 
+        width: 712px; 
     }
     
     .tableWithImagesTask3{
        border-collapse:separate; 
         border-spacing: 1em;
         margin: 0 auto;
-        width: 804px; 
+        width: 712px; 
     }
     
      .tableWithImagesTask4{
-       border-collapse:separate; 
-        border-spacing: 1em;
+        border-collapse:separate; 
+        border-spacing: 4px;
         margin: 0 auto;
-        width: 1024px; 
+        width: 895px; 
     }
     
      .tableWithImagesTask5{
        border-collapse:separate; 
         border-spacing: 1em;
         margin: 0 auto;
-        width: 1024px; 
+        width: 895px; 
     }
     
     .tableWithImagesTask6{
        border-collapse:separate; 
         border-spacing: 1em;
         margin: 0 auto;
-        width: 1024px; 
+        width: 895px; 
     }
     
     .borderedTargetField{
