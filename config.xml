@@ -8,10 +8,10 @@ and open the template in the editor.
 <?xml version="1.0" encoding="UTF-8" ?>
     <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.worteliste"
+        id        = "com.phonegap.bildergeschichte"
         versionCode="10" 
         version   = "1.0.0">
-    <name>Worteliste</name>    
+    <name>Bildergeschichte</name>    
     <preference name="orientation" value="landscape" /> 
     <preference name="fullscreen" value="true" />
     <preference name="loglevel" value="DEBUG" />     
