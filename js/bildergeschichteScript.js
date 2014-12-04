@@ -217,6 +217,15 @@ function slideImageToTargetField(targetTd, mainTable) {
 
             setTimeout(function() {
 
+               // empty target div to slide image to
+               $("#" + clickedTargetId).empty();
+               
+               // mark target fiedl again with string
+               if ($('#' + selectedTd_Id).data("rank") !== null && $('#' + selectedTd_Id).data("type") !== "source"){
+                   var fieldRank = $('#' + selectedTd_Id).data("rank");
+                   var fieldMark = "Zielfeld " + fieldRank;
+                   $('#' + selectedTd_Id).append("<h1>"+fieldMark+"</h1>");
+               }
 
                 // move image to target field
                 $("#" + selectedTd_Id).children('img').clone().appendTo("#" + clickedTargetId);
