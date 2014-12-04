@@ -469,7 +469,7 @@
     
      .tableWithImagesTask4{
         border-collapse:separate; 
-        border-spacing: 4px;
+        border-spacing: 1em;
         margin: 0 auto;
         width: 895px; 
     }
