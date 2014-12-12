@@ -43,10 +43,10 @@ This html page should contain the whole process of this task as a collection of 
             <!--script used to show start page for few seconds and the to switch to intro page-->
             <script type="text/javascript">
 
-                $(document).delegate('#picturesStoryStart', 'pageshow', function() {
+                $(document).delegate('#picturesStoryStart', 'pageshow', function () {
 
                     function showJustForWhile() {
-                        setTimeout(function() {
+                        setTimeout(function () {
                             $.mobile.changePage('#picturesStoryIntro', {transition: "flip"});
                         }, 4000);
 
@@ -70,17 +70,19 @@ This html page should contain the whole process of this task as a collection of 
 
                 <center>
                     <p class="introText">
-                        Gleich sehen Sie in der oberen Bildschirmhälfte eine Geschichte, deren Bilder durcheinander sind. </br>
-                        Ihre Aufgabe ist es, sie wieder in die rictige Reihenfolge zu bringen, so dass die Geschichte eine zeitlich logische Abfolge bekommt. </br>
-                        Um ein Bild in ein Zielfeld zu bringen, tippen Sie zuerst das Bild und dann das Zielfeld an. Wenn Sie sich korrigieren müssen, dann tippen Sie zuerst das
-                        Bild im Feld und dann eine leere Stelle neben den anderen Bildern oben an. Wenn Sie der Meinung sind, alle Bilder richtig sortiert zu haben, dann drücken Sie "Weiter".
+                        Gleich sehen Sie im oben Teil des Bildschirms eine Bildergeschichte, deren Bilder leider durcheinander geraten sind. </br>
+                        Ihre Aufgabe ist es, die Bilder in ihre richtige Reihenfolge zu bringen, so dass die Geschichte wieder eine zeitlich logische Abfolge bekommt. </br>
+                        Im unteren Teil des Bildschirmschirms sehen Sie leere Zielfelder, dorthin sollen Sie die Bilder setzen. Tippen Sie dazu ein Bild oben und im Anschluss
+                        das gewünschte Zielfeld an. Das Bild rutscht dann in das Zielfeld. </br>
+                        Drücken Sie „Weiter“ um ein Beispiel zu sehen.
+
 
                     </p>
                 </center>
 
 
                 <!--only for tests! later uncomment the first line!-->
-                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="goToDemoPage();"/>
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="onShowDemo();"/>
                 <!--<image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="startPicturesStoryTask();"/>-->
             </div>
 
@@ -89,7 +91,7 @@ This html page should contain the whole process of this task as a collection of 
 
 
         <!--slide to demo page for neurocare testbatterie containing a demonstration example to the task bildergeschichte-->
-        <div data-role="page" id="slideToPicturesStoryDemo" data-dom-cache=true class="introPage" >
+<!--        <div data-role="page" id="slideToPicturesStoryDemo" data-dom-cache=true class="introPage" >
 
             <div data-role="content">
 
@@ -108,7 +110,7 @@ This html page should contain the whole process of this task as a collection of 
             </div>
 
 
-        </div>  
+        </div>  -->
 
 
 
@@ -117,8 +119,8 @@ This html page should contain the whole process of this task as a collection of 
 
             <div data-role="content">
 
-        <h1 class="hintText"> Ordnen Sie die Bilder den unteren Zielfeldern nach </h1>
- 
+                <h1 class="hintText"> Ordnen Sie die Bilder in die unteren Zielfelder </h1>
+
                 <div class="centredDiv">
                     <table class="tableWithImagesDemo" >
                         <tr class="contentRow"> 
@@ -130,7 +132,7 @@ This html page should contain the whole process of this task as a collection of 
 
                         <!--only for spacing-->
                         <tr class="gapRow">
-                        <td class="gapField"/>  
+                            <td class="gapField"/>  
                         </tr>
 
 
@@ -147,16 +149,16 @@ This html page should contain the whole process of this task as a collection of 
 
                 </div>
 
-               
+
             </div>
 
 
             <script type="text/javascript">
 
-                $(document).delegate('#picturesStoryDemo1', 'pageshow', function() {
+                $(document).delegate('#picturesStoryDemo1', 'pageshow', function () {
 
                     function showJustForWhile() {
-                        setTimeout(function() {
+                        setTimeout(function () {
                             $.mobile.changePage('#picturesStoryDemo2', {transition: "none"});
                         }, 3000);
 
@@ -208,10 +210,10 @@ This html page should contain the whole process of this task as a collection of 
 
             <script type="text/javascript">
 
-                $(document).delegate('#picturesStoryDemo2', 'pageshow', function() {
+                $(document).delegate('#picturesStoryDemo2', 'pageshow', function () {
 
                     function showJustForWhile() {
-                        setTimeout(function() {
+                        setTimeout(function () {
                             $.mobile.changePage('#picturesStoryDemo3', {transition: "none"});
                         }, 3000);
 
@@ -263,21 +265,21 @@ This html page should contain the whole process of this task as a collection of 
 
             <script type="text/javascript">
 
-                $(document).delegate('#picturesStoryDemo3', 'pageshow', function() {
+                $(document).delegate('#picturesStoryDemo3', 'pageshow', function () {
 
                     function showJustForWhile() {
                         // slide image to target field
-                        setTimeout(function() {
+                        setTimeout(function () {
                             $("#bg_demo2_tomove").animate({
                                 left: '-' + '0' + 'px',
                                 top: '+' + '363' + 'px'
-                            }, 5000, function() {
+                            }, 5000, function () {
                                 // Animation completed
 
                                 $("#bg_demo2_tomove_ImageDiv1").attr('class', 'targetFieldDemo');
                                 $("#bg_demo2_tomove_TargetDiv1").attr('class', 'origFieldDemo');
 
-                                setTimeout(function() {
+                                setTimeout(function () {
                                     $.mobile.changePage('#picturesStoryDemo4', {transition: "none"});
                                 }, 2000);
                             });
@@ -331,10 +333,10 @@ This html page should contain the whole process of this task as a collection of 
 
             <script type="text/javascript">
 
-                $(document).delegate('#picturesStoryDemo4', 'pageshow', function() {
+                $(document).delegate('#picturesStoryDemo4', 'pageshow', function () {
 
                     function showJustForWhile() {
-                        setTimeout(function() {
+                        setTimeout(function () {
                             $.mobile.changePage('#picturesStoryDemo5', {transition: "none"});
                         }, 3000);
 
@@ -388,23 +390,23 @@ This html page should contain the whole process of this task as a collection of 
 
             <script type="text/javascript">
 
-                $(document).delegate('#picturesStoryDemo5', 'pageshow', function() {
+                $(document).delegate('#picturesStoryDemo5', 'pageshow', function () {
 
                     function showJustForWhile() {
                         // slide image to target field
-                        setTimeout(function() {
+                        setTimeout(function () {
                             $("#bg_demo_tf1_correct").animate({
                                 left: '+' + '0' + 'px',
                                 top: '-' + '365' + 'px'
 //                                height: "toggle"
-                            }, 5000, function() {
+                            }, 5000, function () {
                                 // Animation completed
 
 
                                 $("#bg_demo2_tomove_ImageDiv2").attr('class', 'origFieldDemo');
                                 $("#bg_demo2_tomove_TargetDiv2").attr('class', 'targetFieldDemo');
 
-                                setTimeout(function() {
+                                setTimeout(function () {
                                     $.mobile.changePage('#picturesStoryDemo6', {transition: "none"});
                                 }, 2000);
                             });
@@ -455,21 +457,21 @@ This html page should contain the whole process of this task as a collection of 
 
             <script type="text/javascript">
 
-                $(document).delegate('#picturesStoryDemo6', 'pageshow', function() {
+                $(document).delegate('#picturesStoryDemo6', 'pageshow', function () {
 
                     function showJustForWhile() {
                         // slide image to target field
-                        setTimeout(function() {
+                        setTimeout(function () {
                             $("#bg_demo2_tomove2").animate({
                                 left: '-' + '215' + 'px',
                                 top: '+' + '363' + 'px'
-                            }, 5000, function() {
+                            }, 5000, function () {
                                 // Animation completed
 
                                 $("#bg_demo2_tomove_ImageDiv3").attr('class', 'targetFieldDemo');
                                 $("#bg_demo2_tomove_TargetDiv3").attr('class', 'origFieldDemo');
 
-                                setTimeout(function() {
+                                setTimeout(function () {
 
 
                                     $.mobile.changePage('#picturesStoryDemo7', {transition: "none"});
@@ -525,10 +527,10 @@ This html page should contain the whole process of this task as a collection of 
 
             <script type="text/javascript">
 
-                $(document).delegate('#picturesStoryDemo7', 'pageshow', function() {
+                $(document).delegate('#picturesStoryDemo7', 'pageshow', function () {
 
                     function showJustForWhile() {
-                        setTimeout(function() {
+                        setTimeout(function () {
                             $.mobile.changePage('#picturesStoryDemo8', {transition: "none"});
                         }, 3000);
 
@@ -582,15 +584,15 @@ This html page should contain the whole process of this task as a collection of 
 
             <script type="text/javascript">
 
-                $(document).delegate('#picturesStoryDemo8', 'pageshow', function() {
+                $(document).delegate('#picturesStoryDemo8', 'pageshow', function () {
 
                     function showJustForWhile() {
                         // slide image to target field
-                        setTimeout(function() {
+                        setTimeout(function () {
                             $("#bg_demo1_tomove").animate({
                                 left: '+' + '215' + 'px',
                                 top: '+' + '363' + 'px'
-                            }, 5000, function() {
+                            }, 5000, function () {
                                 // Animation completed
 
                                 $("#bg_demo1_tomove_ImageDiv1").attr('class', 'targetFieldDemo');
@@ -601,7 +603,7 @@ This html page should contain the whole process of this task as a collection of 
                                 // hide text
                                 $("#hint").css("visibility", "hidden");
 
-                                setTimeout(function() {
+                                setTimeout(function () {
 
 
                                     $.mobile.changePage('#forwardPage', {transition: "none"});
@@ -682,7 +684,7 @@ This html page should contain the whole process of this task as a collection of 
 
                 <image src="css\images\btns-bg\bt-weiter.png"  data-type="forwardBtn"  class="defaultButton" style="visibility: hidden;" onclick="goToTask2();"/>
 
-                <h1 class="hintText"> Ordnen Sie die Bilder den unteren Zielfeldern nach </h1>
+                <h1 class="hintText"> Ordnen Sie die Bilder in die unteren Zielfelder </h1>
 
             </div>
 
@@ -728,7 +730,7 @@ This html page should contain the whole process of this task as a collection of 
 
 
                 <image src="css\images\btns-bg\bt-weiter.png" data-type="forwardBtn" href="#task3" class="defaultButton" style="visibility: hidden;" onclick="goToTask3();"/>
-                <h1 class="hintText"> Ordnen Sie die Bilder den unteren Zielfeldern nach </h1>
+                <h1 class="hintText"> Ordnen Sie die Bilder in die unteren Zielfelder </h1>
 
             </div>
 
@@ -775,14 +777,14 @@ This html page should contain the whole process of this task as a collection of 
 
 
                 <image src="css\images\btns-bg\bt-weiter.png" data-type="forwardBtn" class="defaultButton" style="visibility: hidden;" onclick="goToTask4();"/>
-                <h1 class="hintText"> Ordnen Sie die Bilder den unteren Zielfeldern nach </h1>
+                <h1 class="hintText"> Ordnen Sie die Bilder in die unteren Zielfelder </h1>
 
             </div>
 
 
         </div> 
-        
-        
+
+
         <!--fourth task of the bildergeschichte-->
         <div data-role="page" id="task4" data-dom-cache=true class="whitePage">
 
@@ -823,16 +825,16 @@ This html page should contain the whole process of this task as a collection of 
 
 
                 <image src="css\images\btns-bg\bt-weiter.png" data-type="forwardBtn" class="defaultButton" style="visibility: hidden;" onclick="goToTask5();"/>
-                <h1 class="hintText"> Ordnen Sie die Bilder den unteren Zielfeldern nach </h1>
+                <h1 class="hintText"> Ordnen Sie die Bilder in die unteren Zielfelder </h1>
 
             </div>
 
 
         </div> 
-        
-        
-        
-         <!--fifth task of the bildergeschichte-->
+
+
+
+        <!--fifth task of the bildergeschichte-->
         <div data-role="page" id="task5" data-dom-cache=true class="whitePage">
 
             <div data-role="content">
@@ -872,17 +874,17 @@ This html page should contain the whole process of this task as a collection of 
 
 
                 <image src="css\images\btns-bg\bt-weiter.png" data-type="forwardBtn" class="defaultButton" style="visibility: hidden;" onclick="goToTask6();"/>
-                <h1 class="hintText"> Ordnen Sie die Bilder den unteren Zielfeldern nach  </h1>
+                <h1 class="hintText"> Ordnen Sie die Bilder in die unteren Zielfelder  </h1>
 
             </div>
 
 
         </div> 
-         
-         
-         
-         
-          <!--sixth task of the bildergeschichte-->
+
+
+
+
+        <!--sixth task of the bildergeschichte-->
         <div data-role="page" id="task6" data-dom-cache=true class="whitePage">
 
             <div data-role="content">
@@ -922,14 +924,14 @@ This html page should contain the whole process of this task as a collection of 
 
 
                 <image src="css\images\btns-bg\bt-weiter.png" data-type="forwardBtn" class="defaultButton" style="visibility: hidden;" onclick="goToEndpage();"/>
-                <h1 class="hintText"> Ordnen Sie die Bilder den unteren Zielfeldern nach  </h1>
+                <h1 class="hintText"> Ordnen Sie die Bilder in die unteren Zielfelder  </h1>
 
             </div>
 
 
         </div> 
 
- <!--end page of the task bildergeschichte-->
+        <!--end page of the task bildergeschichte-->
         <div data-role="page" id="endPage" data-dom-cache=true class="introPage" >
 
             <div data-role="content">

@@ -305,7 +305,7 @@
     }
 
     .selectedImage{
-        opacity: 0.5;
+        opacity: 1;
         box-shadow: 5px 5px 5px #64C463;
         border:6px solid #64C463;
        
