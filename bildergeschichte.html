@@ -91,26 +91,26 @@ This html page should contain the whole process of this task as a collection of 
 
 
         <!--slide to demo page for neurocare testbatterie containing a demonstration example to the task bildergeschichte-->
-<!--        <div data-role="page" id="slideToPicturesStoryDemo" data-dom-cache=true class="introPage" >
-
-            <div data-role="content">
-
-                <image src="css\images\icons\info.png" class="infoIcon"/>
-
-                <center>
-                    <p class="introText">
-                        Drücken Sie unten auf "Weiter", um sich ein Demo-Beispiel anzuschauen.
-
-                    </p>
-                </center>
-
-
-                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="onShowDemo();"/>
-
-            </div>
-
-
-        </div>  -->
+        <!--        <div data-role="page" id="slideToPicturesStoryDemo" data-dom-cache=true class="introPage" >
+        
+                    <div data-role="content">
+        
+                        <image src="css\images\icons\info.png" class="infoIcon"/>
+        
+                        <center>
+                            <p class="introText">
+                                Drücken Sie unten auf "Weiter", um sich ein Demo-Beispiel anzuschauen.
+        
+                            </p>
+                        </center>
+        
+        
+                        <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="onShowDemo();"/>
+        
+                    </div>
+        
+        
+                </div>  -->
 
 
 
@@ -150,6 +150,9 @@ This html page should contain the whole process of this task as a collection of 
                 </div>
 
 
+                <image src="css\images\hand.png" id="demoHand1" style="position: absolute;bottom: 20%;left: 10%;"/>
+
+
             </div>
 
 
@@ -160,11 +163,33 @@ This html page should contain the whole process of this task as a collection of 
                     function showJustForWhile() {
                         setTimeout(function () {
                             $.mobile.changePage('#picturesStoryDemo2', {transition: "none"});
-                        }, 3000);
+                            // animate hand cursor back 
+                            $("#demoHand1").animate({
+                                left: '10' + '%',
+                                bottom: '20' + '%'
+//                                height: "toggle"
+                            }, 1000);
+                        }, 1500);
 
                     }
 
-                    showJustForWhile();
+
+
+                    // slide hand cursor to button
+                    setTimeout(function () {
+                        $("#demoHand1").animate({
+                            left: '55' + '%',
+                            bottom: '55' + '%'
+//                                height: "toggle"
+                        }, 2000, function () {
+                            // Animation completed
+
+                            showJustForWhile();
+
+                        });
+                    }, 1000);
+
+//                    showJustForWhile();
 
                 });
             </script>
@@ -202,6 +227,9 @@ This html page should contain the whole process of this task as a collection of 
 
                     </table>
                 </div>
+
+
+                <image src="css\images\hand.png" style="position: absolute;bottom: 55%;left: 55%;z-index: 1000;"/> 
 
                 <h1 class="hintText"> Tippen Sie ein Bild Ihrer Wahl an. </h1>
 
@@ -250,7 +278,7 @@ This html page should contain the whole process of this task as a collection of 
                         <tr> 
 
                             <td class="targetFieldDemo" > <h1> Zielfeld 1 </h1> </td>
-                            <td class="selectedImage" id="bg_demo2_tomove_TargetDiv1"> <h1> Zielfeld 2 </h1> </td>  
+                            <td class="targetFieldDemo" id="bg_demo2_tomove_TargetDiv1"> <h1> Zielfeld 2 </h1> </td>  
 
                         </tr>
 
@@ -258,6 +286,8 @@ This html page should contain the whole process of this task as a collection of 
                     </table>
                 </div>
 
+
+                <image src="css\images\hand.png" id="demoHand2" style="position: absolute;bottom: 55%;left: 55%;z-index: 1000;"/>
                 <h1 class="hintText"> Tippen Sie jetzt das Zielfeld an, um das Bild dahin zu bewegen. </h1>
 
             </div>
@@ -280,14 +310,44 @@ This html page should contain the whole process of this task as a collection of 
                                 $("#bg_demo2_tomove_TargetDiv1").attr('class', 'origFieldDemo');
 
                                 setTimeout(function () {
-                                    $.mobile.changePage('#picturesStoryDemo4', {transition: "none"});
+                                    // slide hand cursor back
+                                    $("#demoHand2").animate({
+                                        left: '10' + '%',
+                                        bottom: '20' + '%'
+                                    }, 2000, function () {
+                                        // Animation completed
+
+                                        // select target field
+                                        $("#bg_demo2_tomove_TargetDiv1").attr("class", "targetFieldDemo");
+
+                                        $.mobile.changePage('#picturesStoryDemo4', {transition: "none"});
+                                    });
+
+
                                 }, 2000);
                             });
                         }, 3000);
 
                     }
 
-                    showJustForWhile();
+
+                    // slide hand cursor to button
+                    setTimeout(function () {
+                        $("#demoHand2").animate({
+                            left: '55' + '%',
+                            bottom: '15' + '%'
+
+                        }, 2000, function () {
+                            // Animation completed
+
+                            // select target field
+                            $("#bg_demo2_tomove_TargetDiv1").attr("class", "selectedImage");
+                            showJustForWhile();
+
+                        });
+                    }, 1000);
+
+
 
                 });
             </script>
@@ -318,7 +378,7 @@ This html page should contain the whole process of this task as a collection of 
                         <tr> 
 
                             <td class="targetFieldDemo" > <h1> Zielfeld 1 </h1>  </td>
-                            <td class="selectedImage"> <image  src="css\images\story-pics\bg_demo2.png" /> </td> 
+                            <td class="origFieldDemo" id="bg_demo4_tomove_TargetDiv1"> <image  src="css\images\story-pics\bg_demo2.png" /> </td> 
 
                         </tr>
 
@@ -326,6 +386,7 @@ This html page should contain the whole process of this task as a collection of 
                     </table>
                 </div>
 
+                <image src="css\images\hand.png" id="demoHand3" style="position: absolute;bottom: 20%;left: 10%;z-index: 1000;"/>
                 <h1 class="hintText"> Wenn Sie sich korrigieren wollen, tippen Sie das Bild im Zielfeld erneut an. </h1>
 
             </div>
@@ -338,11 +399,26 @@ This html page should contain the whole process of this task as a collection of 
                     function showJustForWhile() {
                         setTimeout(function () {
                             $.mobile.changePage('#picturesStoryDemo5', {transition: "none"});
-                        }, 3000);
+                        }, 2000);
 
                     }
 
-                    showJustForWhile();
+                    // slide hand cursor to button
+                    setTimeout(function () {
+                        $("#demoHand3").animate({
+                            left: '55' + '%',
+                            bottom: '15' + '%'
+
+                        }, 2000, function () {
+                            // Animation completed
+
+                            // select target field
+                            $("#bg_demo4_tomove_TargetDiv1").attr("class", "selectedImage");
+                            showJustForWhile();
+
+                        });
+                    }, 1000);
+
 
                 });
             </script>
@@ -363,7 +439,7 @@ This html page should contain the whole process of this task as a collection of 
                         <tr> 
 
                             <td class="origFieldDemo"><image  src="css\images\story-pics\bg_demo1.png"/>   </td>
-                            <td class="selectedImage" id="bg_demo2_tomove_ImageDiv2"><image id="bg_demo2_correct"/>   </td> 
+                            <td class="targetFieldDemo" id="bg_demo2_tomove_ImageDiv2"><image id="bg_demo2_correct"/>   </td> 
 
                         </tr>
 
@@ -383,6 +459,8 @@ This html page should contain the whole process of this task as a collection of 
                     </table>
                 </div>
 
+
+                <image src="css\images\hand.png" id="demoHand4" style="position: absolute;bottom: 15%;left: 55%;z-index: 1000;"/>
                 <h1 class="hintText"> Tippen Sie dann eine Leere Stelle an, um das Bild zurück zu bewegen. </h1>
 
             </div>
@@ -401,19 +479,42 @@ This html page should contain the whole process of this task as a collection of 
 //                                height: "toggle"
                             }, 5000, function () {
                                 // Animation completed
-
-
                                 $("#bg_demo2_tomove_ImageDiv2").attr('class', 'origFieldDemo');
                                 $("#bg_demo2_tomove_TargetDiv2").attr('class', 'targetFieldDemo');
+                                // slide hand cursor back
+                                $("#demoHand4").animate({
+                                    left: '10' + '%',
+                                    bottom: '20' + '%'
 
-                                setTimeout(function () {
-                                    $.mobile.changePage('#picturesStoryDemo6', {transition: "none"});
-                                }, 2000);
+                                }, 2000, function () {
+                                    // Animation completed
+
+                                    setTimeout(function () {
+                                        $.mobile.changePage('#picturesStoryDemo6', {transition: "none"});
+                                    }, 2000);
+
+                                });
+
+
                             });
-                        }, 3000);
+                        }, 1500);
                     }
 
-                    showJustForWhile();
+                    // slide hand cursor to button
+                    setTimeout(function () {
+                        $("#demoHand4").animate({
+                            left: '55' + '%',
+                            bottom: '55' + '%'
+
+                        }, 2000, function () {
+                            // Animation completed
+
+                            // select target field
+                            $("#bg_demo2_tomove_ImageDiv2").attr("class", "selectedImage");
+                            showJustForWhile();
+
+                        });
+                    }, 1000);
                 });
             </script>
 
@@ -430,7 +531,7 @@ This html page should contain the whole process of this task as a collection of 
                         <tr> 
 
                             <td class="origFieldDemo"><image  src="css\images\story-pics\bg_demo1.png"/>   </td>
-                            <td class="selectedImage" id="bg_demo2_tomove_ImageDiv3"><image id="bg_demo2_tomove2" class="imageTile" src="css\images\story-pics\bg_demo2.png"/>   </td> 
+                            <td class="origFieldDemo" id="bg_demo2_tomove_ImageDiv3"><image id="bg_demo2_tomove2" class="imageTile" src="css\images\story-pics\bg_demo2.png"/>   </td> 
 
                         </tr>
 
@@ -441,7 +542,7 @@ This html page should contain the whole process of this task as a collection of 
 
                         <tr> 
 
-                            <td class="selectedImage" id="bg_demo2_tomove_TargetDiv3"><h1> Zielfeld 1 </h1> </td>
+                            <td class="targetFieldDemo" id="bg_demo2_tomove_TargetDiv3"><h1> Zielfeld 1 </h1> </td>
                             <td class="targetFieldDemo"><h1> Zielfeld 2 </h1> </td> 
 
                         </tr>
@@ -450,6 +551,7 @@ This html page should contain the whole process of this task as a collection of 
                     </table>
                 </div>
 
+                <image src="css\images\hand.png" id="demoHand5" style="position: absolute;bottom: 20%;left: 10%;z-index: 1000;"/>
                 <h1 class="hintText"> Jetzt können Sie fortfahren. </h1>
 
             </div>
@@ -472,16 +574,50 @@ This html page should contain the whole process of this task as a collection of 
                                 $("#bg_demo2_tomove_TargetDiv3").attr('class', 'origFieldDemo');
 
                                 setTimeout(function () {
+                                    // move hand cursor back
+                                    $("#demoHand5").animate({
+                                        left: '10' + '%',
+                                        bottom: '20' + '%'
 
+                                    }, 2000, function () {
+                                        // Animation completed
+                                        $.mobile.changePage('#picturesStoryDemo7', {transition: "none"});
+                                    });
 
-                                    $.mobile.changePage('#picturesStoryDemo7', {transition: "none"});
                                 }, 2000);
                             });
                         }, 3000);
 
                     }
 
-                    showJustForWhile();
+                    // slide hand cursor to button
+                    setTimeout(function () {
+                        $("#demoHand5").animate({
+                            left: '55' + '%',
+                            bottom: '55' + '%'
+
+                        }, 2000, function () {
+                            // Animation completed
+
+                            // select orig. field
+                            $("#bg_demo2_tomove_ImageDiv3").attr("class", "selectedImage");
+
+                            // move hand cursor to target field
+                            $("#demoHand5").animate({
+                                left: '40' + '%',
+                                bottom: '15' + '%'
+
+                            }, 2000, function () {
+                                // Animation completed
+
+                                // select orig. field
+                                $("#bg_demo2_tomove_TargetDiv3").attr("class", "selectedImage");
+
+                                showJustForWhile();
+                            });
+
+                        });
+                    }, 1000);
 
                 });
             </script>
@@ -499,7 +635,7 @@ This html page should contain the whole process of this task as a collection of 
                     <table class="tableWithImagesDemo">
                         <tr> 
 
-                            <td class="selectedImage"><image  src="css\images\story-pics\bg_demo1.png"/>   </td>
+                            <td class="origFieldDemo" id="bg_demo2_tomove_ImageDiv7"><image  src="css\images\story-pics\bg_demo1.png"/>   </td>
                             <td class="targetFieldDemo"> </td> 
 
                         </tr>
@@ -520,6 +656,7 @@ This html page should contain the whole process of this task as a collection of 
                     </table>
                 </div>
 
+                <image src="css\images\hand.png" id="demoHand6" style="position: absolute;bottom: 20%;left: 10%;z-index: 1000;"/>
                 <h1 class="hintText"> Jetzt weiter mit dem nächsten Bild. </h1>
 
             </div>
@@ -532,12 +669,23 @@ This html page should contain the whole process of this task as a collection of 
                     function showJustForWhile() {
                         setTimeout(function () {
                             $.mobile.changePage('#picturesStoryDemo8', {transition: "none"});
-                        }, 3000);
+                        }, 1500);
 
                     }
 
-                    showJustForWhile();
+                    // move hand cursor to target field
+                    $("#demoHand6").animate({
+                        left: '40' + '%',
+                        bottom: '55' + '%'
 
+                    }, 2000, function () {
+                        // Animation completed
+
+                        // select orig. field
+                        $("#bg_demo2_tomove_ImageDiv7").attr("class", "selectedImage");
+
+                        showJustForWhile();
+                    });
                 });
             </script>
 
@@ -566,7 +714,7 @@ This html page should contain the whole process of this task as a collection of 
                         <tr> 
 
                             <td class="origFieldDemo" ><image  src="css\images\story-pics\bg_demo2.png"/>   </td>
-                            <td class="selectedImage" id="bg_demo1_tomove_TargetDiv1"> <h1> Zielfeld 2 </h1> </td> 
+                            <td class="targetFieldDemo" id="bg_demo1_tomove_TargetDiv1"> <h1> Zielfeld 2 </h1> </td> 
 
                         </tr>
 
@@ -576,8 +724,9 @@ This html page should contain the whole process of this task as a collection of 
 
 
                 <image src="css\images\btns-bg\bt-weiter.png" id="forwardBtn" class="defaultButton" style="visibility: hidden;"/>
-
+                <image src="css\images\hand.png" id="demoHand7" style="position: absolute;bottom: 55%;left: 40%;z-index: 1000;"/>
                 <h1 class="hintText" id="hint"> Und weiter mit dem nächsten Zielfeld. </h1>
+
 
             </div>
 
@@ -600,21 +749,54 @@ This html page should contain the whole process of this task as a collection of 
 
                                 // show forward button
                                 $("#forwardBtn").css("visibility", "visible");
-                                // hide text
-                                $("#hint").css("visibility", "hidden");
+                                // show forward text hint
+                                $("#hint").html("Am Ende jeder Aufgabe klicken Sie auf die 'Weiter' Schaltfläche");
 
-                                setTimeout(function () {
+                                // move hand cursor to forward button
+                                $("#demoHand7").animate({
+                                    left: '85' + '%',
+                                    bottom: '0' + '%'
+
+                                }, 2000, function () {
+                                    // Animation completed
+                                    // hide text
+                                    $("#hint").css("visibility", "hidden"); 
+                                    
+                                    setTimeout(function () {
+                                        // move hand cursor back
+                                        $("#demoHand7").animate({
+                                            left: '10' + '%',
+                                            bottom: '20' + '%'
+
+                                        }, 2000, function () {
+                                            // Animation completed
+
+                                            $.mobile.changePage('#forwardPage', {transition: "none"});
+                                        });
 
 
-                                    $.mobile.changePage('#forwardPage', {transition: "none"});
-                                }, 2000);
+                                    }, 1000);
+                                });
+
+
                             });
-                        }, 3000);
+                        }, 1500);
 
                     }
 
-                    showJustForWhile();
+                    // move hand cursor to target field
+                    $("#demoHand7").animate({
+                        left: '55' + '%',
+                        bottom: '15' + '%'
 
+                    }, 2000, function () {
+                        // Animation completed
+
+                        // select orig. field
+                        $("#bg_demo1_tomove_TargetDiv1").attr("class", "selectedImage");
+
+                        showJustForWhile();
+                    });
                 });
             </script>
 
