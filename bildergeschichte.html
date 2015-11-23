@@ -47,7 +47,7 @@ This html page should contain the whole process of this task as a collection of 
 
                     function showJustForWhile() {
                         setTimeout(function () {
-                            $.mobile.changePage('#picturesStoryIntro', {transition: "flip"});
+                            $.mobile.changePage('#picturesStoryIntro', {transition: "pop"});
                         }, 4000);
 
                     }
@@ -66,23 +66,94 @@ This html page should contain the whole process of this task as a collection of 
 
             <div data-role="content">
 
-                <image src="css\images\icons\info.png" class="infoIcon"/>
 
-                <center>
-                    <p class="introText">
-                        Gleich sehen Sie im oben Teil des Bildschirms eine Bildergeschichte, deren Bilder leider durcheinander geraten sind. </br>
-                        Ihre Aufgabe ist es, die Bilder in ihre richtige Reihenfolge zu bringen, so dass die Geschichte wieder eine zeitlich logische Abfolge bekommt. </br>
-                        Im unteren Teil des Bildschirmschirms sehen Sie leere Zielfelder, dorthin sollen Sie die Bilder setzen. Tippen Sie dazu ein Bild oben und im Anschluss
-                        das gewünschte Zielfeld an. Das Bild rutscht dann in das Zielfeld. </br>
-                        Drücken Sie „Weiter“ um ein Beispiel zu sehen.
+                <div class="wrap">
+
+                    <!--instruction div-->
+                    <div class="floatleft">
+
+                        <!--instruction header-->
+                        <div style="display: inline;">
+
+                            <image src="css\images\icons\info.png" class="infoIcon"/>
+
+                            <h1 class="instructionHeader" >Was ist Ihre Aufgabe?</h1>
+
+                        </div>
+
+                        <!--instruction text-->
+                        <div class="instructionContent">
+                            <p class="instructionText">
+ </br> 
+                                Gleich sehen Sie im oberen Teil des Bildschirms eine Bildergeschichte, deren Bilder leider durcheinander geraten sind. </br>
+                                Ihre Aufgabe ist es, die Bilder in ihre richtige Reihenfolge zu bringen, so dass die Geschichte wieder eine zeitlich logische Abfolge bekommt. </br> </br>
+                                Im unteren Teil des Bildschirmschirms sehen Sie leere Zielfelder, dorthin sollen Sie die Bilder setzen. Tippen Sie dazu ein Bild oben und im Anschluss
+                                das gewünschte Zielfeld an. Das Bild rutscht dann in das Zielfeld. </br></br>
+                                Drücken Sie <b>„Aufgabe starten“</b> um die Aufgabe zu starten.
+
+                            </p>
+                        </div>
 
 
-                    </p>
-                </center>
+                    </div>
 
 
-                <!--only for tests! later uncomment the first line!-->
-                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="onShowDemo();"/>
+
+                    <!--example div-->
+                    <div class="floatright">
+
+                        <h1 class="exampleHeader" >Beispiel:</h1>
+
+                        </br></br></br></br>
+
+                        <image src="css\images\examples\example.png" />
+
+
+                    </div>
+
+
+                    <div style="clear: both;">
+
+
+
+
+                    </div>      
+
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+
+                <!--start button-->
+                <image src="css\images\btns-bg\bt-aufgabe-starten.png" class="startTaskButton" onclick="showFollowingPageDelayed('task1', 500);"/>
+
+
+
+                <!--                <image src="css\images\icons\info.png" class="infoIcon"/>
+                
+                                <center>
+                                    <p class="introText">
+                                        Gleich sehen Sie im oberenn Teil des Bildschirms eine Bildergeschichte, deren Bilder leider durcheinander geraten sind. </br>
+                                        Ihre Aufgabe ist es, die Bilder in ihre richtige Reihenfolge zu bringen, so dass die Geschichte wieder eine zeitlich logische Abfolge bekommt. </br>
+                                        Im unteren Teil des Bildschirmschirms sehen Sie leere Zielfelder, dorthin sollen Sie die Bilder setzen. Tippen Sie dazu ein Bild oben und im Anschluss
+                                        das gewünschte Zielfeld an. Das Bild rutscht dann in das Zielfeld. </br>
+                                        Drücken Sie „Weiter“ um ein Beispiel zu sehen.
+                
+                
+                                    </p>
+                                </center>
+                
+                
+                                only for tests! later uncomment the first line!
+                                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="onShowDemo();"/>-->
                 <!--<image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="startPicturesStoryTask();"/>-->
             </div>
 
@@ -760,8 +831,8 @@ This html page should contain the whole process of this task as a collection of 
                                 }, 2000, function () {
                                     // Animation completed
                                     // hide text
-                                    $("#hint").css("visibility", "hidden"); 
-                                    
+                                    $("#hint").css("visibility", "hidden");
+
                                     setTimeout(function () {
                                         // move hand cursor back
                                         $("#demoHand7").animate({
@@ -840,9 +911,9 @@ This html page should contain the whole process of this task as a collection of 
                     <table class="tableWithImagesTask1" id="task1_table">
                         <tr> 
 
-                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task1_table'));" id="task1_img1_orig_td1" data-status="full" ><image  id="task1_img1" src="css\images\story-pics\task1_img1.png"/>   </td>
-                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task1_table'));"  id="task1_img2_orig_td2" data-status="full" ><image  id="task1_img2" src="css\images\story-pics\task1_img2.png"/>   </td> 
-                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task1_table'));"  id="task1_img3_orig_td3" data-status="full" ><image  id="task1_img3"  src="css\images\story-pics\task1_img3.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task1_table'));" id="task1_img1_orig_td1" data-status="full" ><image  id="task1_img1" style="display: block;" src="css\images\story-pics\task1_img1.png"/>   </td>
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task1_table'));"  id="task1_img2_orig_td2" data-status="full" ><image  id="task1_img2" style="display: block;" src="css\images\story-pics\task1_img2.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task1_table'));"  id="task1_img3_orig_td3" data-status="full" ><image  id="task1_img3" style="display: block;"  src="css\images\story-pics\task1_img3.png"/>   </td> 
 
                         </tr>
 
@@ -884,10 +955,10 @@ This html page should contain the whole process of this task as a collection of 
                     <table class="tableWithImagesTask2" id="task2_table">
                         <tr> 
 
-                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task2_table'));" id="task2_img1_orig_td1" data-status="full" ><image  id="task2_img1"  src="css\images\story-pics\task2_img1.png"/>   </td>
-                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task2_table'));"  id="task2_img2_orig_td2" data-status="full" ><image  id="task2_img2"  src="css\images\story-pics\task2_img2.png"/>   </td> 
-                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task2_table'));"  id="task2_img3_orig_td3" data-status="full" ><image  id="task2_img3"  src="css\images\story-pics\task2_img3.png"/>   </td> 
-                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task2_table'));"  id="task2_img4_orig_td4" data-status="full" ><image  id="task2_img4"  src="css\images\story-pics\task2_img4.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task2_table'));" id="task2_img1_orig_td1" data-status="full" ><image  id="task2_img1" style="display: block;" src="css\images\story-pics\task2_img1.png"/>   </td>
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task2_table'));"  id="task2_img2_orig_td2" data-status="full" ><image  id="task2_img2" style="display: block;" src="css\images\story-pics\task2_img2.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task2_table'));"  id="task2_img3_orig_td3" data-status="full" ><image  id="task2_img3" style="display: block;" src="css\images\story-pics\task2_img3.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task2_table'));"  id="task2_img4_orig_td4" data-status="full" ><image  id="task2_img4" style="display: block;" src="css\images\story-pics\task2_img4.png"/>   </td> 
 
                         </tr>
 
@@ -931,10 +1002,10 @@ This html page should contain the whole process of this task as a collection of 
                     <table class="tableWithImagesTask3" id="task3_table">
                         <tr> 
 
-                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task3_table'));" id="task3_img1_orig_td1" data-status="full" ><image  id="task3_img1"  src="css\images\story-pics\task3_img1.png"/>   </td>
-                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task3_table'));"  id="task3_img2_orig_td2" data-status="full" ><image  id="task3_img2"  src="css\images\story-pics\task3_img2.png"/>   </td> 
-                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task3_table'));"  id="task3_img3_orig_td3" data-status="full" ><image  id="task3_img3"  src="css\images\story-pics\task3_img3.png"/>   </td> 
-                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task3_table'));"  id="task3_img4_orig_td4" data-status="full" ><image  id="task3_img4"  src="css\images\story-pics\task3_img4.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task3_table'));" id="task3_img1_orig_td1" data-status="full" ><image  id="task3_img1" style="display: block;" src="css\images\story-pics\task3_img1.png"/>   </td>
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task3_table'));"  id="task3_img2_orig_td2" data-status="full" ><image  id="task3_img2" style="display: block;" src="css\images\story-pics\task3_img2.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task3_table'));"  id="task3_img3_orig_td3" data-status="full" ><image  id="task3_img3" style="display: block;" src="css\images\story-pics\task3_img3.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task3_table'));"  id="task3_img4_orig_td4" data-status="full" ><image  id="task3_img4" style="display: block;" src="css\images\story-pics\task3_img4.png"/>   </td> 
 
                         </tr>
 
@@ -977,11 +1048,11 @@ This html page should contain the whole process of this task as a collection of 
                     <table class="tableWithImagesTask4" id="task4_table">
                         <tr> 
 
-                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task4_table'));" id="task4_img1_orig_td1" data-status="full" ><image  id="task4_img1"  src="css\images\story-pics\task4_img1.png"/>   </td>
-                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task4_table'));"  id="task4_img2_orig_td2" data-status="full" ><image  id="task4_img2"  src="css\images\story-pics\task4_img2.png"/>   </td> 
-                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task4_table'));"  id="task4_img3_orig_td3" data-status="full" ><image  id="task4_img3"  src="css\images\story-pics\task4_img3.png"/>   </td> 
-                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task4_table'));"  id="task4_img4_orig_td4" data-status="full" ><image  id="task4_img4"  src="css\images\story-pics\task4_img4.png"/>   </td> 
-                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task4_table'));"  id="task4_img5_orig_td5" data-status="full" ><image  id="task4_img5"  src="css\images\story-pics\task4_img5.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task4_table'));" id="task4_img1_orig_td1" data-status="full" ><image  id="task4_img1" style="display: block;" src="css\images\story-pics\task4_img1.png"/>   </td>
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task4_table'));"  id="task4_img2_orig_td2" data-status="full" ><image  id="task4_img2" style="display: block;" src="css\images\story-pics\task4_img2.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task4_table'));"  id="task4_img3_orig_td3" data-status="full" ><image  id="task4_img3" style="display: block;" src="css\images\story-pics\task4_img3.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task4_table'));"  id="task4_img4_orig_td4" data-status="full" ><image  id="task4_img4" style="display: block;" src="css\images\story-pics\task4_img4.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task4_table'));"  id="task4_img5_orig_td5" data-status="full" ><image  id="task4_img5" style="display: block;" src="css\images\story-pics\task4_img5.png"/>   </td> 
 
                         </tr>
 
@@ -1026,11 +1097,11 @@ This html page should contain the whole process of this task as a collection of 
                     <table class="tableWithImagesTask5" id="task5_table">
                         <tr> 
 
-                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task5_table'));" id="task5_img1_orig_td1" data-status="full" ><image  id="task5_img1"  src="css\images\story-pics\task5_img1.png"/>   </td>
-                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task5_table'));"  id="task5_img2_orig_td2" data-status="full" ><image  id="task5_img2"  src="css\images\story-pics\task5_img2.png"/>   </td> 
-                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task5_table'));"  id="task5_img3_orig_td3" data-status="full" ><image  id="task5_img3"  src="css\images\story-pics\task5_img3.png"/>   </td> 
-                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task5_table'));"  id="task5_img4_orig_td4" data-status="full" ><image  id="task5_img4"  src="css\images\story-pics\task5_img4.png"/>   </td> 
-                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task5_table'));"  id="task5_img5_orig_td5" data-status="full" ><image  id="task5_img5"  src="css\images\story-pics\task5_img5.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task5_table'));" id="task5_img1_orig_td1" data-status="full" ><image  id="task5_img1" style="display: block;" src="css\images\story-pics\task5_img1.png"/>   </td>
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task5_table'));"  id="task5_img2_orig_td2" data-status="full" ><image  id="task5_img2" style="display: block;" src="css\images\story-pics\task5_img2.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task5_table'));"  id="task5_img3_orig_td3" data-status="full" ><image  id="task5_img3" style="display: block;" src="css\images\story-pics\task5_img3.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task5_table'));"  id="task5_img4_orig_td4" data-status="full" ><image  id="task5_img4" style="display: block;" src="css\images\story-pics\task5_img4.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task5_table'));"  id="task5_img5_orig_td5" data-status="full" ><image  id="task5_img5" style="display: block;" src="css\images\story-pics\task5_img5.png"/>   </td> 
 
                         </tr>
 
@@ -1076,11 +1147,11 @@ This html page should contain the whole process of this task as a collection of 
                     <table class="tableWithImagesTask6" id="task6_table">
                         <tr> 
 
-                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task6_table'));" id="task6_img1_orig_td1" data-status="full" ><image  id="task6_img1"  src="css\images\story-pics\task6_img1.png"/>   </td>
-                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task6_table'));"  id="task6_img2_orig_td2" data-status="full" ><image  id="task6_img2"  src="css\images\story-pics\task6_img2.png"/>   </td> 
-                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task6_table'));"  id="task6_img3_orig_td3" data-status="full" ><image  id="task6_img3"  src="css\images\story-pics\task6_img3.png"/>   </td> 
-                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task6_table'));"  id="task6_img4_orig_td4" data-status="full" ><image  id="task6_img4"  src="css\images\story-pics\task6_img4.png"/>   </td> 
-                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task6_table'));"  id="task6_img5_orig_td5" data-status="full" ><image  id="task6_img5"  src="css\images\story-pics\task6_img5.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task6_table'));" id="task6_img1_orig_td1" data-status="full" ><image  id="task6_img1" style="display: block;" src="css\images\story-pics\task6_img1.png"/>   </td>
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task6_table'));"  id="task6_img2_orig_td2" data-status="full" ><image  id="task6_img2" style="display: block;" src="css\images\story-pics\task6_img2.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task6_table'));"  id="task6_img3_orig_td3" data-status="full" ><image  id="task6_img3" style="display: block;" src="css\images\story-pics\task6_img3.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task6_table'));"  id="task6_img4_orig_td4" data-status="full" ><image  id="task6_img4" style="display: block;" src="css\images\story-pics\task6_img4.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task6_table'));"  id="task6_img5_orig_td5" data-status="full" ><image  id="task6_img5" style="display: block;" src="css\images\story-pics\task6_img5.png"/>   </td> 
 
                         </tr>
 
@@ -1114,11 +1185,22 @@ This html page should contain the whole process of this task as a collection of 
         </div> 
 
         <!--end page of the task bildergeschichte-->
-        <div data-role="page" id="endPage" data-dom-cache=true class="introPage" >
+        <div data-role="page" id="endPage" data-dom-cache=true class="whitePage" >
 
             <div data-role="content">
+                
+                 <image src="css\images\icons\congrats.png" class="milestoneIcon"/>
+                
+                <h1  class="endPageHint" >Sie haben diese Aufgabe geschafft!</h1> 
 
-                <image src="css\images\icons\tipp.png" class="infoIcon"/>
+<!--                <h2 class="progressbarHint">Ihr Fortschritt:</h1> 
+                
+                <progress class="executionProgress" value="60" max="70"></progress>-->
+
+     <image src="css\images\btns-bg\bt-next-task.png" class="nextTaskButton" onclick="showFollowingPageDelayed('picturesStoryStart',500);"/>
+                
+
+<!--                <image src="css\images\icons\tipp.png" class="infoIcon"/>
 
                 <center>
                     <h1 class="taskEndText">Diese Aufgabe haben Sie geschafft!</h1>
@@ -1126,7 +1208,7 @@ This html page should contain the whole process of this task as a collection of 
                 </center>
 
 
-                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" />
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" />-->
 
             </div>
 

@@ -12,6 +12,28 @@ var selectedImg_src;
 var imageSelected = false;
 
 
+
+// shows given page after a given time interval
+function showFollowingPageDelayed(page, delay)
+{
+    try
+    {
+        setTimeout(function () {
+            $.mobile.changePage('#' + page, {transition: "slide"});
+        }, delay);
+
+
+
+    }
+
+    catch (error) {
+        console.log("Error when switching to page: " + page + error);
+    }
+
+
+}
+
+
 // to switch to the demo page
 function goToDemoPage() {
 
@@ -43,7 +65,7 @@ function goToTask2() {
 
     try
     {
-        $.mobile.changePage('#task2', {transition: "flip"});
+        $.mobile.changePage('#task2', {transition: "slide"});
         $(".whitePage").find("[data-type=forwardBtn]").css("visibility", "hidden");
         $(".whitePage").find(".hintText").css("visibility", "visible");
     }
@@ -58,7 +80,7 @@ function goToTask3() {
 
     try
     {
-        $.mobile.changePage('#task3', {transition: "flip"});
+        $.mobile.changePage('#task3', {transition: "slide"});
         $(".whitePage").find("[data-type=forwardBtn]").css("visibility", "hidden");
         $(".whitePage").find(".hintText").css("visibility", "visible");
     }
@@ -73,7 +95,7 @@ function goToTask4() {
 
     try
     {
-        $.mobile.changePage('#task4', {transition: "flip"});
+        $.mobile.changePage('#task4', {transition: "slide"});
         $(".whitePage").find("[data-type=forwardBtn]").css("visibility", "hidden");
         $(".whitePage").find(".hintText").css("visibility", "visible");
     }
@@ -88,7 +110,7 @@ function goToTask5() {
 
     try
     {
-        $.mobile.changePage('#task5', {transition: "flip"});
+        $.mobile.changePage('#task5', {transition: "slide"});
         $(".whitePage").find("[data-type=forwardBtn]").css("visibility", "hidden");
         $(".whitePage").find(".hintText").css("visibility", "visible");
     }
@@ -103,7 +125,7 @@ function goToTask6() {
 
     try
     {
-        $.mobile.changePage('#task6', {transition: "flip"});
+        $.mobile.changePage('#task6', {transition: "slide"});
         $(".whitePage").find("[data-type=forwardBtn]").css("visibility", "hidden");
         $(".whitePage").find(".hintText").css("visibility", "visible");
     }
@@ -118,7 +140,7 @@ function goToEndpage() {
 
     try
     {
-        $.mobile.changePage('#endPage', {transition: "flip"});
+        $.mobile.changePage('#endPage', {transition: "slide"});
         $(".whitePage").find("[data-type=forwardBtn]").css("visibility", "hidden");
         $(".whitePage").find(".hintText").css("visibility", "visible");
     }
