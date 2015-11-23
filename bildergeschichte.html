@@ -54,10 +54,10 @@ This html page should contain the whole process of this task as a collection of 
                     
                     
                     // bind tap events
-                    $("td[data-group*='task1']").bind("tap", function () {
+                    $("td[data-group='task1']").bind("tap", function () {
                         selectImage(this, document.getElementById('task1_table'));
                     });
-                     $("td[data-group*='targetTask1']").bind("tap", function () {
+                     $("td[data-group='targetTask1']").bind("tap", function () {
                         slideImageToTargetField(this, document.getElementById('task1_table'));
                     });
                     
@@ -923,8 +923,8 @@ This html page should contain the whole process of this task as a collection of 
                         <tr> 
 
                             <td class="origField" data-type="source" data-group="task1"  id="task1_img1_orig_td1" data-status="full" ><image  id="task1_img1" style="display: block;" src="css\images\story-pics\task1_img1.png"/>   </td>
-                            <td class="origField" data-type="source" data-group="task1"   id="task1_img2_orig_td2" data-status="full" ><image  id="task1_img2" style="display: block;" src="css\images\story-pics\task1_img2.png"/>   </td> 
-                            <td class="origField" data-type="source" data-group="task1"   id="task1_img3_orig_td3" data-status="full" ><image  id="task1_img3" style="display: block;"  src="css\images\story-pics\task1_img3.png"/>   </td> 
+                            <td class="origField" data-type="source" data-group="task1"  id="task1_img2_orig_td2" data-status="full" ><image  id="task1_img2" style="display: block;" src="css\images\story-pics\task1_img2.png"/>   </td> 
+                            <td class="origField" data-type="source" data-group="task1"  id="task1_img3_orig_td3" data-status="full" ><image  id="task1_img3" style="display: block;"  src="css\images\story-pics\task1_img3.png"/>   </td> 
 
                         </tr>
 
