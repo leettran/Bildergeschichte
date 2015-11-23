@@ -51,17 +51,6 @@ This html page should contain the whole process of this task as a collection of 
                         }, 4000);
 
                     }
-                    
-                    
-                    // bind tap events
-                    $("td[data-group='task1']").bind("tap", function () {
-                        selectImage(this, document.getElementById('task1_table'));
-                    });
-                     $("td[data-group='targetTask1']").bind("tap", function () {
-                        slideImageToTargetField(this, document.getElementById('task1_table'));
-                    });
-                    
-                    
 
                     showJustForWhile();
 
@@ -922,9 +911,9 @@ This html page should contain the whole process of this task as a collection of 
                     <table class="tableWithImagesTask1" id="task1_table">
                         <tr> 
 
-                            <td class="origField" data-type="source" data-group="task1"  id="task1_img1_orig_td1" data-status="full" ><image  id="task1_img1" style="display: block;" src="css\images\story-pics\task1_img1.png"/>   </td>
-                            <td class="origField" data-type="source" data-group="task1"  id="task1_img2_orig_td2" data-status="full" ><image  id="task1_img2" style="display: block;" src="css\images\story-pics\task1_img2.png"/>   </td> 
-                            <td class="origField" data-type="source" data-group="task1"  id="task1_img3_orig_td3" data-status="full" ><image  id="task1_img3" style="display: block;"  src="css\images\story-pics\task1_img3.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task1_table'));" id="task1_img1_orig_td1" data-status="full" ><image  id="task1_img1" style="display: block;" src="css\images\story-pics\task1_img1.png"/>   </td>
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task1_table'));"  id="task1_img2_orig_td2" data-status="full" ><image  id="task1_img2" style="display: block;" src="css\images\story-pics\task1_img2.png"/>   </td> 
+                            <td class="origField" data-type="source" onclick="selectImage(this, document.getElementById('task1_table'));"  id="task1_img3_orig_td3" data-status="full" ><image  id="task1_img3" style="display: block;"  src="css\images\story-pics\task1_img3.png"/>   </td> 
 
                         </tr>
 
@@ -935,9 +924,9 @@ This html page should contain the whole process of this task as a collection of 
 
                         <tr> 
 
-                            <td class="targetField" id="task1_img1_targ_td1" data-group="targetTask1" data-rank="1" data-status="empty"> <h1> Zielfeld 1 </h1>  </td>
-                            <td class="targetField" id="task1_img2_targ_td2" data-group="targetTask1" data-rank="2"  data-status="empty"> <h1> Zielfeld 2 </h1> </td> 
-                            <td class="targetField" id="task1_img3_targ_td3" data-group="targetTask1" data-rank="3"  data-status="empty"> <h1> Zielfeld 3 </h1> </td> 
+                            <td class="targetField" id="task1_img1_targ_td1"  data-rank="1" onclick="slideImageToTargetField(this, document.getElementById('task1_table'));" data-status="empty"> <h1> Zielfeld 1 </h1>  </td>
+                            <td class="targetField" id="task1_img2_targ_td2"  data-rank="2" onclick="slideImageToTargetField(this, document.getElementById('task1_table'));" data-status="empty"> <h1> Zielfeld 2 </h1> </td> 
+                            <td class="targetField" id="task1_img3_targ_td3"  data-rank="3" onclick="slideImageToTargetField(this, document.getElementById('task1_table'));" data-status="empty"> <h1> Zielfeld 3 </h1> </td> 
 
                         </tr>
 
