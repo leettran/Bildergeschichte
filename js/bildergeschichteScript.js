@@ -34,6 +34,22 @@ function showFollowingPageDelayed(page, delay)
 }
 
 
+
+
+function restartTask(){
+    
+    
+    try
+    {
+        
+    }
+    
+    catch (error) {
+        console.log("Error when restarting tas! " + error);
+    }
+}
+
+
 // to switch to the demo page
 function goToDemoPage() {
 
